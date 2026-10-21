@@ -1,24 +1,24 @@
 [gd_scene format=3 uid="uid://dbnpbl624u54m"]
 
 [ext_resource type="FontFile" uid="uid://bxowny6fht8s0" path="res://Assets/slkscr.ttf" id="1_qcwuv"]
-[ext_resource type="Script" uid="uid://dsrl1f4bkwvfc" path="res://Scenes/hint_popup.gd" id="1_ri1qm"]
+[ext_resource type="Script" uid="uid://dsrl1f4bkwvfc" path="res://Scripts/hint_popup.gd" id="1_ri1qm"]
 [ext_resource type="Texture2D" uid="uid://bmynj3dvavbcs" path="res://Assets/chrono-icon.png" id="2_q8l1g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0yq7a"]
 font = ExtResource("1_qcwuv")
 font_color = Color(0, 0, 0, 1)
 
-[node name="HintPopup" type="PanelContainer" unique_id=1980661259]
-offset_right = 279.0
-offset_bottom = 163.0
+[node name="HintPopup" type="Node2D" unique_id=1657307870]
 script = ExtResource("1_ri1qm")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1972023452]
-layout_mode = 2
+offset_right = 279.0
+offset_bottom = 163.0
 color = Color(0.22745098, 0.36078432, 1, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1855507847]
-layout_mode = 2
+offset_right = 279.0
+offset_bottom = 163.0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -29,6 +29,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Description" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1817570505]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 text = "This is a placeholder text, not very interesting"
@@ -40,6 +41,7 @@ autowrap_mode = 2
 layout_mode = 2
 
 [node name="Instructions" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=904700048]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
@@ -56,6 +58,7 @@ shortcut_keys_enabled = false
 horizontal_alignment = 1
 
 [node name="InvestiguerButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=836703719]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Investiguer (1)"
 icon = ExtResource("2_q8l1g")
