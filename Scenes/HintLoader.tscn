@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bdco43s55oo84"]
+
+[ext_resource type="Script" uid="uid://mb5tb35rgdbk" path="res://Scripts/hint_loader.gd" id="1_bovsw"]
+[ext_resource type="Texture2D" uid="uid://bbxcpbe750fxa" path="res://Assets/Search-icon.svg" id="2_bovsw"]
+
+[sub_resource type="Gradient" id="Gradient_k2a5j"]
+offsets = PackedFloat32Array(0.3051948, 0.41558442, 0.45454547, 0.7077922)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0ri5o"]
+gradient = SubResource("Gradient_k2a5j")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_sxuyl"]
+offsets = PackedFloat32Array(0.4025974, 0.52597404, 0.6038961, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0, 0.94509804, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3uudj"]
+gradient = SubResource("Gradient_sxuyl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="HintLoader" type="Node2D" unique_id=426794489]
+script = ExtResource("1_bovsw")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1978915853]
+offset_left = -31.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 31.0
+value = 25.0
+fill_mode = 5
+texture_under = SubResource("GradientTexture2D_0ri5o")
+texture_progress = SubResource("GradientTexture2D_3uudj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=137958048]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_bovsw")
