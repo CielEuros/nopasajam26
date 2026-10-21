@@ -13,7 +13,6 @@ func _ready() -> void:
 	if hint.cost > 0:
 		var instruction := str("[i]Il y a peut-être un indice ici, investiguer coûtera[/i] [b]", hint.cost, " point", "s" if hint.cost > 1 else "", " d'action[/b]")
 		Investiguer.text = str("Investiguer (", hint.cost, ")")
-		Investiguer.visible = true
 		Instructions.text = instruction
 		Instructions.visible = true
 	else:
