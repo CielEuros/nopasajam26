@@ -40,11 +40,14 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="TiroirsHintPopup" parent="Tiroirs" unique_id=1657307870 instance=ExtResource("3_m1xfa")]
 visible = false
-position = Vector2(28.977272, -60.795456)
+position = Vector2(5.681818, 1.7045441)
 hint = SubResource("Resource_ri1qm")
 
-[node name="HintLoader" parent="Tiroirs" unique_id=426794489 instance=ExtResource("5_nu6pb")]
+[node name="TiroirsHintLoader" parent="Tiroirs" unique_id=426794489 instance=ExtResource("5_nu6pb")]
+visible = false
 position = Vector2(0.5681818, -5.681818)
+value = 37
 
+[connection signal="input_event" from="Tiroirs/Area2D" to="." method="_tiroirs_click"]
 [connection signal="mouse_entered" from="Tiroirs/Area2D" to="." method="change_cursor_hand"]
 [connection signal="mouse_exited" from="Tiroirs/Area2D" to="." method="change_cursor_back"]
