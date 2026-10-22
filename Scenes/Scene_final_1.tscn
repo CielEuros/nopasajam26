@@ -63,8 +63,16 @@ shader_parameter/glow_intensity = 0.8
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(18, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d0u6y"]
+shader = ExtResource("6_p52ge")
+shader_parameter/hover_active = 0.0
+shader_parameter/glow_color = Color(1, 0.9, 0.5, 1)
+shader_parameter/glow_intensity = 0.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(31, 63)
+
 [node name="Main" type="Node2D" unique_id=1645864229]
-scale = Vector2(3, 3)
 
 [node name="Murs" type="Sprite2D" parent="." unique_id=660158500]
 position = Vector2(0, 47)
@@ -237,6 +245,7 @@ position = Vector2(168, 128)
 texture = ExtResource("29_3kliq")
 
 [node name="Fridge" type="Sprite2D" parent="." unique_id=207445392]
+material = SubResource("ShaderMaterial_d0u6y")
 position = Vector2(239, 112)
 texture = ExtResource("26_eeur1")
 
@@ -244,6 +253,13 @@ texture = ExtResource("26_eeur1")
 position = Vector2(-6, -28)
 texture = ExtResource("27_dgrde")
 centered = false
+
+[node name="Area2D" type="Area2D" parent="Fridge" unique_id=939767334]
+script = ExtResource("17_okstq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fridge/Area2D" unique_id=573510804]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="Bocal" type="Sprite2D" parent="." unique_id=889368621]
 position = Vector2(168, 96)
