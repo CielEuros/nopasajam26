@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://2grprs5mcnsr"]
 
-<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://byc6x53vcjdgi" path="res://Assets/Placeholder-Bedroom.png" id="1_7w26d"]
 [ext_resource type="Script" uid="uid://8kvwqvai7s2o" path="res://Scripts/Bedroom.gd" id="1_tn7r7"]
 [ext_resource type="PackedScene" uid="uid://dbnpbl624u54m" path="res://Scenes/hint_popup.tscn" id="3_m1xfa"]
@@ -9,35 +8,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(82.95453, 150.5682)
-=======
-[ext_resource type="Texture2D" uid="uid://d31wub560xm8j" path="res://Assets/Sprite-V1/APPARTMENT_MODEL.png" id="1_7w26d"]
-[ext_resource type="Texture2D" uid="uid://crunrv74y8nq0" path="res://Assets/Sprite-V1/WALL.png" id="2_b41dj"]
-[ext_resource type="Texture2D" uid="uid://5ps7ojcmwb83" path="res://Assets/Sprite-V1/WALL_PATTERN.png" id="3_pfnf2"]
-[ext_resource type="Texture2D" uid="uid://bkpr7dqu6a01y" path="res://Assets/Sprite-V1/LEFT_DOOR.png" id="4_eeur1"]
-[ext_resource type="Texture2D" uid="uid://4s18awgvu2jo" path="res://Assets/Sprite-V1/RIGHT_DOOR.png" id="5_dgrde"]
-[ext_resource type="Texture2D" uid="uid://oto86reffah" path="res://Assets/Sprite-V1/BUFFET.png" id="6_2usdi"]
-[ext_resource type="Texture2D" uid="uid://3n8xy4i8o86d" path="res://Assets/Sprite-V1/BUFFET_BOOK.png" id="7_t0llb"]
-[ext_resource type="Texture2D" uid="uid://bhfwq67g5xpln" path="res://Assets/Sprite-V1/BUFFET_BOOK_02.png" id="8_qro6v"]
-[ext_resource type="Texture2D" uid="uid://c0rsi2cd3unwv" path="res://Assets/Sprite-V1/FRAME.png" id="9_kdl8b"]
-[ext_resource type="Texture2D" uid="uid://dssfmeoaloypm" path="res://Assets/Sprite-V1/SOFA.png" id="10_n74dm"]
-[ext_resource type="Texture2D" uid="uid://be1jqpuxktsdn" path="res://Assets/Sprite-V1/SOFA_PATTERN.png" id="11_vcqhc"]
-[ext_resource type="Texture2D" uid="uid://chmbho0f8weax" path="res://Assets/Sprite-V1/CUSHION.png" id="12_08518"]
-[ext_resource type="Texture2D" uid="uid://c6pqe70bavx16" path="res://Assets/Sprite-V1/CUSHION_02.png" id="13_rv02g"]
-[ext_resource type="Texture2D" uid="uid://bwryq68pteg3k" path="res://Assets/Sprite-V1/DESK.png" id="14_rlq8e"]
-[ext_resource type="Texture2D" uid="uid://ufy5yd4l2r3w" path="res://Assets/Sprite-V1/FRAME Copy.png" id="15_0ynga"]
-[ext_resource type="Texture2D" uid="uid://dcn4iqwph2dbq" path="res://Assets/Sprite-V1/COMPUTER.png" id="16_v6iu5"]
-[ext_resource type="Texture2D" uid="uid://c0crjbkb6n3sj" path="res://Assets/Sprite-V1/COMPUTER_TOWER.png" id="17_cks1x"]
-[ext_resource type="Texture2D" uid="uid://cafygly4gatth" path="res://Assets/Sprite-V1/DESK_BOOK.png" id="18_h2opl"]
-[ext_resource type="Texture2D" uid="uid://c3s1mkubhey87" path="res://Assets/Sprite-V1/RADIATOR.png" id="19_muf0h"]
-[ext_resource type="Texture2D" uid="uid://c7kbeysosd08d" path="res://Assets/Sprite-V1/CURTAINS.png" id="20_isnq1"]
-[ext_resource type="Texture2D" uid="uid://blj5nokxfogjk" path="res://Assets/Sprite-V1/CURTAINS_PATTERN.png" id="21_vcxxe"]
-[ext_resource type="Texture2D" uid="uid://b2scwl5cby1fl" path="res://Assets/Sprite-V1/HANGER.png" id="22_0odmy"]
-[ext_resource type="Texture2D" uid="uid://b3tpxkh4tyrt4" path="res://Assets/Sprite-V1/LAMP.png" id="23_3piqm"]
-[ext_resource type="Texture2D" uid="uid://dhj0jirdaiejn" path="res://Assets/Sprite-V1/VASE.png" id="24_wlig8"]
-[ext_resource type="Texture2D" uid="uid://4whibb7fxevm" path="res://Assets/Sprite-V1/CARPET.png" id="25_fu2fl"]
-[ext_resource type="Texture2D" uid="uid://52mjnphxr136" path="res://Assets/Sprite-V1/FRIDGE.png" id="26_eeur1"]
-[ext_resource type="Texture2D" uid="uid://bmjj2e1mae4pf" path="res://Assets/Sprite-V1/FRIDGE_POSTIT.png" id="27_dgrde"]
->>>>>>> Stashed changes
 
 [sub_resource type="Resource" id="Resource_ri1qm"]
 script = ExtResource("4_nu6pb")
@@ -47,28 +17,27 @@ cost = 1
 metadata/_custom_type_script = "uid://bajhnhj5b5sb3"
 
 [node name="Main" type="Node2D" unique_id=409896861]
+script = ExtResource("1_tn7r7")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=650289631]
+position = Vector2(2, 0)
+scale = Vector2(1.76, 1.76)
 texture = ExtResource("1_7w26d")
 centered = false
 
-[node name="Murs" type="Sprite2D" parent="Background" unique_id=660158500]
-visible = false
-position = Vector2(0, 47)
-texture = ExtResource("2_b41dj")
-centered = false
+[node name="Tiroirs" type="Sprite2D" parent="." unique_id=1600878340]
+position = Vector2(138, 325)
+scale = Vector2(1.76, 1.76)
+texture = ExtResource("1_7w26d")
+region_enabled = true
+region_rect = Rect2(32.000122, 106.12072, 86.82938, 156.88)
 
-[node name="Murs_pattern" type="Sprite2D" parent="Background" unique_id=341024363]
-visible = false
-position = Vector2(-12, 53)
-texture = ExtResource("3_pfnf2")
-centered = false
+[node name="Area2D" type="Area2D" parent="Tiroirs" unique_id=891369438]
 
-[node name="Left_Doors" type="Sprite2D" parent="Background" unique_id=920396918]
-position = Vector2(295, 104)
-texture = ExtResource("4_eeur1")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiroirs/Area2D" unique_id=1775389474]
+position = Vector2(0.5681915, -1.4204559)
+shape = SubResource("RectangleShape2D_g4v7s")
 
-<<<<<<< Updated upstream
 [node name="TiroirsHintPopup" parent="Tiroirs" unique_id=1657307870 instance=ExtResource("3_m1xfa")]
 visible = false
 position = Vector2(5.681818, 1.7045441)
@@ -82,122 +51,3 @@ value = 37
 [connection signal="input_event" from="Tiroirs/Area2D" to="." method="_tiroirs_click"]
 [connection signal="mouse_entered" from="Tiroirs/Area2D" to="." method="change_cursor_hand"]
 [connection signal="mouse_exited" from="Tiroirs/Area2D" to="." method="change_cursor_back"]
-=======
-[node name="Right_Doors" type="Sprite2D" parent="Background" unique_id=1575798065]
-position = Vector2(399, 104)
-texture = ExtResource("5_dgrde")
-
-[node name="Buffet" type="Sprite2D" parent="Background" unique_id=284367765]
-position = Vector2(325, 76)
-texture = ExtResource("6_2usdi")
-centered = false
-
-[node name="Books_top_buffet" type="Sprite2D" parent="Background" unique_id=1861737943]
-position = Vector2(335, 82)
-texture = ExtResource("7_t0llb")
-centered = false
-
-[node name="Books_low_buffet" type="Sprite2D" parent="Background" unique_id=85220403]
-position = Vector2(334, 100)
-texture = ExtResource("8_qro6v")
-centered = false
-
-[node name="Frame_buffet" type="Sprite2D" parent="Background" unique_id=429848101]
-position = Vector2(341, 68)
-texture = ExtResource("9_kdl8b")
-
-[node name="Canap" type="Sprite2D" parent="Background" unique_id=1133524580]
-position = Vector2(283, 105)
-texture = ExtResource("10_n74dm")
-centered = false
-
-[node name="Canap_pattern" type="Sprite2D" parent="Background/Canap" unique_id=678133010]
-position = Vector2(1, 1)
-texture = ExtResource("11_vcqhc")
-centered = false
-
-[node name="Coussin_Blanc" type="Sprite2D" parent="Background" unique_id=636615379]
-position = Vector2(292, 109)
-texture = ExtResource("12_08518")
-centered = false
-
-[node name="Coussin_Rouge" type="Sprite2D" parent="Background" unique_id=1063149432]
-position = Vector2(302, 112)
-texture = ExtResource("13_rv02g")
-centered = false
-
-[node name="Desk" type="Sprite2D" parent="Background" unique_id=1822789665]
-position = Vector2(89, 64)
-texture = ExtResource("14_rlq8e")
-centered = false
-
-[node name="Frame_up" type="Sprite2D" parent="Background" unique_id=1500719785]
-position = Vector2(140, 57)
-texture = ExtResource("15_0ynga")
-centered = false
-
-[node name="Frame_down" type="Sprite2D" parent="Background/Frame_up" unique_id=1675580285]
-position = Vector2(7, 18)
-texture = ExtResource("15_0ynga")
-centered = false
-
-[node name="Computer" type="Sprite2D" parent="Background" unique_id=1581800746]
-position = Vector2(105, 81)
-texture = ExtResource("16_v6iu5")
-centered = false
-
-[node name="Computer_tower" type="Sprite2D" parent="Background/Computer" unique_id=1108302252]
-position = Vector2(-20, 40)
-texture = ExtResource("17_cks1x")
-centered = false
-
-[node name="Books_desk" type="Sprite2D" parent="Background" unique_id=522986673]
-position = Vector2(104, 62)
-texture = ExtResource("18_h2opl")
-centered = false
-
-[node name="Heat" type="Sprite2D" parent="Background" unique_id=670180894]
-position = Vector2(32, 112)
-texture = ExtResource("19_muf0h")
-centered = false
-
-[node name="Rideau" type="Sprite2D" parent="Background" unique_id=1331163477]
-position = Vector2(17, 64)
-texture = ExtResource("20_isnq1")
-centered = false
-
-[node name="Rideau_Pattern" type="Sprite2D" parent="Background/Rideau" unique_id=254971463]
-position = Vector2(1, 1)
-texture = ExtResource("21_vcxxe")
-centered = false
-
-[node name="Hanger" type="Sprite2D" parent="Background" unique_id=1294949362]
-position = Vector2(1, 82)
-texture = ExtResource("22_0odmy")
-centered = false
-
-[node name="Lamp" type="Sprite2D" parent="Background" unique_id=1283650742]
-position = Vector2(134, 81)
-texture = ExtResource("23_3piqm")
-centered = false
-
-[node name="Vase" type="Sprite2D" parent="Background" unique_id=887535696]
-position = Vector2(350, 60)
-texture = ExtResource("24_wlig8")
-centered = false
-
-[node name="Tapis" type="Sprite2D" parent="Background" unique_id=61755896]
-modulate = Color(1, 1, 1, 0.9137255)
-position = Vector2(1, 143)
-texture = ExtResource("25_fu2fl")
-centered = false
-
-[node name="Fridge" type="Sprite2D" parent="Background" unique_id=207445392]
-position = Vector2(239, 112)
-texture = ExtResource("26_eeur1")
-
-[node name="Fridge_Post-it" type="Sprite2D" parent="Background" unique_id=315642694]
-position = Vector2(233, 84)
-texture = ExtResource("27_dgrde")
-centered = false
->>>>>>> Stashed changes
