@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bkpr7dqu6a01y" path="res://Assets/Sprite-V1/LEFT_DOOR.png" id="4_eeur1"]
 [ext_resource type="Texture2D" uid="uid://4s18awgvu2jo" path="res://Assets/Sprite-V1/RIGHT_DOOR.png" id="5_dgrde"]
 [ext_resource type="Texture2D" uid="uid://oto86reffah" path="res://Assets/Sprite-V1/BUFFET.png" id="6_2usdi"]
+[ext_resource type="Shader" uid="uid://b4rrkupf5iro8" path="res://Scenes/Shader_Mouse_Hover.gdshader" id="6_p52ge"]
 [ext_resource type="Texture2D" uid="uid://3n8xy4i8o86d" path="res://Assets/Sprite-V1/BUFFET_BOOK.png" id="7_t0llb"]
 [ext_resource type="Texture2D" uid="uid://bhfwq67g5xpln" path="res://Assets/Sprite-V1/BUFFET_BOOK_02.png" id="8_qro6v"]
 [ext_resource type="Texture2D" uid="uid://c0rsi2cd3unwv" path="res://Assets/Sprite-V1/FRAME.png" id="9_kdl8b"]
@@ -16,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ufy5yd4l2r3w" path="res://Assets/Sprite-V1/FRAME Copy.png" id="15_0ynga"]
 [ext_resource type="Texture2D" uid="uid://dcn4iqwph2dbq" path="res://Assets/Sprite-V1/COMPUTER.png" id="16_v6iu5"]
 [ext_resource type="Texture2D" uid="uid://c0crjbkb6n3sj" path="res://Assets/Sprite-V1/COMPUTER_TOWER.png" id="17_cks1x"]
+[ext_resource type="Script" uid="uid://cx5ae7x4i4tno" path="res://Scripts/Code_Shader.gd" id="17_okstq"]
 [ext_resource type="Texture2D" uid="uid://dmur1itgthdxt" path="res://Assets/Sprite-V1/WINDOW.png" id="18_5vbqp"]
 [ext_resource type="Texture2D" uid="uid://cafygly4gatth" path="res://Assets/Sprite-V1/DESK_BOOK.png" id="18_h2opl"]
 [ext_resource type="Texture2D" uid="uid://c3s1mkubhey87" path="res://Assets/Sprite-V1/RADIATOR.png" id="19_muf0h"]
@@ -41,16 +43,36 @@
 [ext_resource type="Texture2D" uid="uid://dnsc1fayn5lfi" path="res://Assets/Sprite-V1/COFFEE_TABLE.png" id="38_rk3t4"]
 [ext_resource type="Texture2D" uid="uid://bpqos4mmssmvu" path="res://Assets/Sprite-V1/MARGIN.png" id="40_x6tok"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p52ge"]
+shader = ExtResource("6_p52ge")
+shader_parameter/hover_active = 0.0
+shader_parameter/glow_color = Color(1, 0.9, 0.5, 1)
+shader_parameter/glow_intensity = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3kliq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(26.944427, 16.111115)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_okstq"]
+shader = ExtResource("6_p52ge")
+shader_parameter/hover_active = 0.0
+shader_parameter/glow_color = Color(1, 0.9, 0.5, 1)
+shader_parameter/glow_intensity = 0.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(18, 20)
+
 [node name="Main" type="Node2D" unique_id=1645864229]
-scale = Vector2(3.6, 3.6)
+scale = Vector2(3, 3)
 
 [node name="Murs" type="Sprite2D" parent="." unique_id=660158500]
 position = Vector2(0, 47)
 texture = ExtResource("2_b41dj")
 centered = false
 
-[node name="Murs_pattern" type="Sprite2D" parent="." unique_id=341024363]
-position = Vector2(-12, 53)
+[node name="Murs_pattern" type="Sprite2D" parent="Murs" unique_id=341024363]
+position = Vector2(-12, 6)
 texture = ExtResource("3_pfnf2")
 centered = false
 
@@ -68,9 +90,18 @@ texture = ExtResource("6_2usdi")
 centered = false
 
 [node name="Books_top_buffet" type="Sprite2D" parent="." unique_id=1861737943]
+material = SubResource("ShaderMaterial_p52ge")
 position = Vector2(335, 82)
 texture = ExtResource("7_t0llb")
 centered = false
+
+[node name="Area2D" type="Area2D" parent="Books_top_buffet" unique_id=152279801]
+material = SubResource("ShaderMaterial_3kliq")
+script = ExtResource("17_okstq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Books_top_buffet/Area2D" unique_id=210872202]
+position = Vector2(13.75, 7.722229)
+shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Books_low_buffet" type="Sprite2D" parent="." unique_id=85220403]
 position = Vector2(334, 100)
@@ -101,9 +132,9 @@ position = Vector2(302, 112)
 texture = ExtResource("13_rv02g")
 centered = false
 
-[node name="Desk" type="Sprite2D" parent="." unique_id=1822789665]
-position = Vector2(89, 64)
-texture = ExtResource("14_rlq8e")
+[node name="Vase" type="Sprite2D" parent="." unique_id=887535696]
+position = Vector2(350, 60)
+texture = ExtResource("24_wlig8")
 centered = false
 
 [node name="Frame_up" type="Sprite2D" parent="." unique_id=1500719785]
@@ -115,6 +146,31 @@ centered = false
 position = Vector2(7, 18)
 texture = ExtResource("15_0ynga")
 centered = false
+
+[node name="Lamp" type="Sprite2D" parent="." unique_id=1283650742]
+position = Vector2(134, 81)
+texture = ExtResource("23_3piqm")
+centered = false
+
+[node name="Desk" type="Sprite2D" parent="." unique_id=1822789665]
+position = Vector2(89, 64)
+texture = ExtResource("14_rlq8e")
+centered = false
+
+[node name="Desk-tirroir" type="Sprite2D" parent="Desk" unique_id=1229784215]
+material = SubResource("ShaderMaterial_okstq")
+position = Vector2(30, 50)
+texture = ExtResource("14_rlq8e")
+centered = false
+region_enabled = true
+region_rect = Rect2(30, 50, 18, 22)
+
+[node name="Area2D" type="Area2D" parent="Desk/Desk-tirroir" unique_id=914789157]
+script = ExtResource("17_okstq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Desk/Desk-tirroir/Area2D" unique_id=825574648]
+position = Vector2(9, 11)
+shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Computer" type="Sprite2D" parent="." unique_id=1581800746]
 position = Vector2(105, 81)
@@ -154,16 +210,6 @@ centered = false
 [node name="Hanger" type="Sprite2D" parent="." unique_id=1294949362]
 position = Vector2(1, 82)
 texture = ExtResource("22_0odmy")
-centered = false
-
-[node name="Lamp" type="Sprite2D" parent="." unique_id=1283650742]
-position = Vector2(134, 81)
-texture = ExtResource("23_3piqm")
-centered = false
-
-[node name="Vase" type="Sprite2D" parent="." unique_id=887535696]
-position = Vector2(350, 60)
-texture = ExtResource("24_wlig8")
 centered = false
 
 [node name="Fan" type="Sprite2D" parent="." unique_id=1097087956]
@@ -243,3 +289,8 @@ modulate = Color(1, 1, 1, 0.9137255)
 position = Vector2(0, 143.056)
 texture = ExtResource("25_fu2fl")
 centered = false
+
+[connection signal="mouse_entered" from="Books_top_buffet/Area2D" to="Desk/Desk-tirroir" method="mouse_hover_enter"]
+[connection signal="mouse_exited" from="Books_top_buffet/Area2D" to="Desk/Desk-tirroir" method="mouse_hover_exit"]
+[connection signal="mouse_entered" from="Desk/Desk-tirroir/Area2D" to="Desk/Desk-tirroir" method="mouse_hover_enter"]
+[connection signal="mouse_exited" from="Desk/Desk-tirroir/Area2D" to="Desk/Desk-tirroir" method="mouse_hover_exit"]
