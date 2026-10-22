@@ -234,12 +234,12 @@ position = Vector2(272, 128)
 texture = ExtResource("38_rk3t4")
 centered = false
 
-[node name="Tapis" type="Sprite2D" parent="." unique_id=61755896]
-modulate = Color(1, 1, 1, 0.9137255)
-position = Vector2(1, 143)
-texture = ExtResource("25_fu2fl")
-centered = false
-
 [node name="Margins" type="Sprite2D" parent="." unique_id=1081940564]
 texture = ExtResource("40_x6tok")
+centered = false
+
+[node name="Tapis" type="Sprite2D" parent="." unique_id=61755896]
+modulate = Color(1, 1, 1, 0.9137255)
+position = Vector2(0, 143.056)
+texture = ExtResource("25_fu2fl")
 centered = false
