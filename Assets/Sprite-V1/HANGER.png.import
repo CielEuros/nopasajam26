@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgl17rexpaikk"
-path="res://.godot/imported/Placeholder-hand-rest.png-55e5347f3609c161031072586c8e3d02.ctex"
+uid="uid://b2scwl5cby1fl"
+path="res://.godot/imported/HANGER.png-e27bf0ef682c7767834436977ea01309.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder-hand-rest.png"
-dest_files=["res://.godot/imported/Placeholder-hand-rest.png-55e5347f3609c161031072586c8e3d02.ctex"]
+source_file="res://Assets/Sprite-V1/HANGER.png"
+dest_files=["res://.godot/imported/HANGER.png-e27bf0ef682c7767834436977ea01309.ctex"]
 
 [params]
 

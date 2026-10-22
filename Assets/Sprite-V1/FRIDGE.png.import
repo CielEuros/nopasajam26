@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvg5jj7ijrtar"
-path="res://.godot/imported/Placeholder-hand-interract.png-3e15f6b7b878ba2a68bab0771a214065.ctex"
+uid="uid://52mjnphxr136"
+path="res://.godot/imported/FRIDGE.png-c394e16f5f05e4536bf69cb83a5c42d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder-hand-interract.png"
-dest_files=["res://.godot/imported/Placeholder-hand-interract.png-3e15f6b7b878ba2a68bab0771a214065.ctex"]
+source_file="res://Assets/Sprite-V1/FRIDGE.png"
+dest_files=["res://.godot/imported/FRIDGE.png-c394e16f5f05e4536bf69cb83a5c42d9.ctex"]
 
 [params]
 
