@@ -2,6 +2,7 @@ class_name ScoreController
 extends Node
 
 signal no_more_actions
+signal decision(arrest: bool)
 
 @export var actions_remaining := 10
 var found: Array[Hint] = Array()
@@ -50,3 +51,7 @@ func select_proof3(hint: Hint) -> Hint:
 	var h = proof3
 	proof3 = hint
 	return h
+
+func decide(arrest: bool) -> void:
+	recommend_arrest = arrest
+	decision.emit(arrest)
