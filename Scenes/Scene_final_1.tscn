@@ -314,6 +314,7 @@ centered = false
 position = Vector2(200, 90)
 ignore_rotation = false
 zoom = Vector2(3.6, 3.6)
+limit_enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 420
