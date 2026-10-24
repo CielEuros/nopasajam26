@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://d2vmvqjf20t1o"]
+
+[ext_resource type="Texture2D" uid="uid://ck5q7aoo382w1" path="res://Assets/Verdict/WALL.png" id="1_4qgmu"]
+[ext_resource type="Texture2D" uid="uid://csxwk6v7i8dfk" path="res://Assets/Verdict/VERDICT_MODEL.png" id="1_wqlyu"]
+[ext_resource type="Texture2D" uid="uid://bi88gxcw5ux3x" path="res://Assets/Verdict/WINDOW.png" id="2_f0apj"]
+[ext_resource type="Texture2D" uid="uid://cc6xp4iksljc" path="res://Assets/Verdict/LEFT_DOOR.png" id="3_n582x"]
+[ext_resource type="Texture2D" uid="uid://um0x1ct0px8k" path="res://Assets/Verdict/MARGIN.png" id="4_iutfu"]
+[ext_resource type="Texture2D" uid="uid://r6b0gxn52osa" path="res://Assets/Verdict/DESK.png" id="5_bpsas"]
+[ext_resource type="Texture2D" uid="uid://cevx6fx6rqdth" path="res://Assets/Verdict/BOARD.png" id="6_muixs"]
+[ext_resource type="Texture2D" uid="uid://ck8ksgem4r4fs" path="res://Assets/Verdict/BUFFET.png" id="7_1i3ka"]
+[ext_resource type="Texture2D" uid="uid://fgwu1emqv34h" path="res://Assets/Verdict/CARPET.png" id="8_1iyno"]
+[ext_resource type="Texture2D" uid="uid://srdmw373ou11" path="res://Assets/Verdict/CLUTTER.png" id="9_f35qm"]
+[ext_resource type="Texture2D" uid="uid://hfmowvuelw5l" path="res://Assets/Verdict/COMPUTER.png" id="10_s1ict"]
+[ext_resource type="Texture2D" uid="uid://rstqtl8q6rp7" path="res://Assets/Verdict/FOLDER.png" id="11_ll3bp"]
+[ext_resource type="Texture2D" uid="uid://pdy6e55ra31i" path="res://Assets/Verdict/FURNITURE.png" id="12_othif"]
+[ext_resource type="Texture2D" uid="uid://c06lkkxqea3mg" path="res://Assets/Verdict/Layer 1.png" id="13_6aoy1"]
+[ext_resource type="Texture2D" uid="uid://b6mcqwcdo6g2n" path="res://Assets/Verdict/PAPER_TEXT_DESCRIPTION.png" id="14_eiyl1"]
+[ext_resource type="Texture2D" uid="uid://qw21t02lhhrn" path="res://Assets/Verdict/POLAROID_ZOOM.png" id="15_84lcx"]
+[ext_resource type="Texture2D" uid="uid://c5vjds7tmuu1h" path="res://Assets/Verdict/CLIP.png" id="16_wimf1"]
+[ext_resource type="Texture2D" uid="uid://t0fvik0rdvga" path="res://Assets/Verdict/POLAROID.png" id="18_uldoh"]
+[ext_resource type="Texture2D" uid="uid://cgs8sru14xuf5" path="res://Assets/Verdict/PROOF_01.png" id="19_tlcxm"]
+[ext_resource type="Texture2D" uid="uid://dmqjxkpu52oey" path="res://Assets/Verdict/PROOF_02.png" id="20_t8b1g"]
+[ext_resource type="Texture2D" uid="uid://bh4noo57lm8yo" path="res://Assets/Verdict/PROOF_03.png" id="21_jotjt"]
+[ext_resource type="Texture2D" uid="uid://coqt548wm50x" path="res://Assets/Verdict/STAMP_ZONE.png" id="22_fghka"]
+
+[node name="Main" type="Node2D" unique_id=1352504856]
+
+[node name="Background" type="Node2D" parent="." unique_id=817061849]
+
+[node name="Walls" type="Sprite2D" parent="Background" unique_id=238170601]
+texture = ExtResource("1_4qgmu")
+centered = false
+
+[node name="Window" type="Sprite2D" parent="Background" unique_id=1694475993]
+texture = ExtResource("2_f0apj")
+centered = false
+
+[node name="Left_door" type="Sprite2D" parent="Background" unique_id=1096093435]
+texture = ExtResource("3_n582x")
+centered = false
+
+[node name="Margins" type="Sprite2D" parent="Background" unique_id=1345021120]
+texture = ExtResource("4_iutfu")
+centered = false
+
+[node name="Desk" type="Sprite2D" parent="Background" unique_id=1695993158]
+texture = ExtResource("5_bpsas")
+centered = false
+
+[node name="Board" type="Sprite2D" parent="Background" unique_id=373293503]
+texture = ExtResource("6_muixs")
+centered = false
+
+[node name="Buffet" type="Sprite2D" parent="Background" unique_id=83617599]
+texture = ExtResource("7_1i3ka")
+centered = false
+
+[node name="Carpet" type="Sprite2D" parent="Background" unique_id=1093021794]
+texture = ExtResource("8_1iyno")
+centered = false
+
+[node name="Clutter" type="Sprite2D" parent="Background" unique_id=738855242]
+texture = ExtResource("9_f35qm")
+centered = false
+
+[node name="Computer" type="Sprite2D" parent="Background" unique_id=199396852]
+texture = ExtResource("10_s1ict")
+centered = false
+
+[node name="Folder" type="Sprite2D" parent="Background" unique_id=290228824]
+texture = ExtResource("11_ll3bp")
+centered = false
+
+[node name="Furniture" type="Sprite2D" parent="Background" unique_id=1144316769]
+texture = ExtResource("12_othif")
+centered = false
+
+[node name="Layer_1" type="Sprite2D" parent="Background" unique_id=1274654958]
+visible = false
+texture = ExtResource("13_6aoy1")
+centered = false
+
+[node name="Paper_Text_Description" type="Sprite2D" parent="Background" unique_id=1360623655]
+texture = ExtResource("14_eiyl1")
+centered = false
+
+[node name="Polaroid_Zoom" type="Sprite2D" parent="Background" unique_id=1215518438]
+texture = ExtResource("15_84lcx")
+centered = false
+
+[node name="Clip" type="Sprite2D" parent="Background" unique_id=386603468]
+texture = ExtResource("16_wimf1")
+centered = false
+
+[node name="Background_final" type="Sprite2D" parent="." unique_id=974344138]
+visible = false
+texture = ExtResource("1_wqlyu")
+centered = false
+
+[node name="Interractible" type="Node2D" parent="." unique_id=389798965]
+
+[node name="Polaroid_node" type="Node2D" parent="Interractible" unique_id=1576945814]
+
+[node name="Polaroid" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=1944205290]
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid2" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=648013094]
+position = Vector2(18, 0)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid3" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=621927476]
+position = Vector2(36, 0)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid4" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=1646716705]
+position = Vector2(0, 18)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid5" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=1779842801]
+position = Vector2(18, 18)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid6" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=1407443323]
+position = Vector2(36, 18)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid7" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=832186146]
+position = Vector2(0, 36)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid8" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=968543466]
+position = Vector2(18, 36)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid9" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=1493035645]
+position = Vector2(36, 36)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid10" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=1880333957]
+texture = ExtResource("18_uldoh")
+centered = false
+offset = Vector2(0, 54)
+
+[node name="Polaroid11" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=907591947]
+position = Vector2(18, 54)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Polaroid12" type="Sprite2D" parent="Interractible/Polaroid_node" unique_id=1149276249]
+position = Vector2(36, 54)
+texture = ExtResource("18_uldoh")
+centered = false
+
+[node name="Proof" type="Node2D" parent="Interractible" unique_id=1889198327]
+
+[node name="Proof_1" type="Sprite2D" parent="Interractible/Proof" unique_id=464408778]
+texture = ExtResource("19_tlcxm")
+centered = false
+
+[node name="Proof_2" type="Sprite2D" parent="Interractible/Proof" unique_id=1673451023]
+texture = ExtResource("20_t8b1g")
+centered = false
+
+[node name="Proof_3" type="Sprite2D" parent="Interractible/Proof" unique_id=1019263899]
+texture = ExtResource("21_jotjt")
+centered = false
+
+[node name="Stamp_zone" type="Sprite2D" parent="Interractible" unique_id=2101232302]
+texture = ExtResource("22_fghka")
+centered = false
+
+[node name="Interractible_control" type="Control" parent="." unique_id=304031458]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
