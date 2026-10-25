@@ -9,7 +9,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_gt5qg"]
 line_spacing = -2.0
-font_size = 5
+font_size = 7
 font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8hx5i"]
@@ -39,17 +39,17 @@ texture = ExtResource("3_7v24w")
 centered = false
 
 [node name="Label" type="Label" parent="Margins/Paper" unique_id=694538733]
-offset_left = -63.0
-offset_top = 7.0
-offset_right = 157.0
-offset_bottom = 39.0
-text = "Tu as été éxécuté pour  
-sabotage par incompétences, 
- l'accusé était un  revolutionnaire. 
-Aidé la révolution par erreur 
+offset_left = 0.9999962
+offset_top = 9.0
+offset_right = 131.76926
+offset_bottom = 56.0
+scale = Vector2(0.65, 0.65)
+text = "Tu as été éxécuté pour 
+sabotage par incompétence, l'accusé était un  révolutionnaire. Aider la révolution par erreur 
 quel exploit."
 label_settings = SubResource("LabelSettings_gt5qg")
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Paper_up" type="Sprite2D" parent="Margins" unique_id=1606500568]
 position = Vector2(190, 79)

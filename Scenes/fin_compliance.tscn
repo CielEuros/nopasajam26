@@ -9,7 +9,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2e50"]
 line_spacing = -3.0
-font_size = 6
+font_size = 7
 font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4qcij"]
@@ -39,14 +39,15 @@ centered = false
 
 [node name="Label" type="Label" parent="Background/Paper" unique_id=2040937034]
 offset_left = 4.0
-offset_top = 7.0
-offset_right = 91.0
-offset_bottom = 40.0
+offset_top = 8.0
+offset_right = 119.714264
+offset_bottom = 51.0
+scale = Vector2(0.7, 0.7)
 text = "La Patrie te remercie de tes
 services, ce traitre n'a même
-plus ses yeux pour pleuré. Ils
+plus ses yeux pour pleurer. Ils
 rêvaient d'un monde
-meilleure. Quel ennuie."
+meilleur. Quel ennui."
 label_settings = SubResource("LabelSettings_e2e50")
 horizontal_alignment = 1
 

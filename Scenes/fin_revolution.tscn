@@ -9,7 +9,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_ntq1d"]
 line_spacing = -3.0
-font_size = 6
+font_size = 7
 font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_j75ph"]
@@ -38,12 +38,12 @@ texture = ExtResource("4_j75ph")
 centered = false
 
 [node name="Label" type="Label" parent="Background/Paper" unique_id=132946336]
-offset_left = 3.0
-offset_top = 8.0
-offset_right = 90.0
-offset_bottom = 35.0
-text = "Camarade, félicitation !
-Tu as décidé de résisté et ne
+offset_top = 10.0
+offset_right = 127.14285
+offset_bottom = 45.0
+scale = Vector2(0.7, 0.7)
+text = "Camarade, félicitations !
+Tu as décidé de résister et ne
 pas suivre les ordres, la
 Patrie ne t'en remercie pas."
 label_settings = SubResource("LabelSettings_ntq1d")
