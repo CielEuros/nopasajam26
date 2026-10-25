@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NoPasajam26"
-run/main_scene="uid://o5bnnno7283d"
+run/main_scene="uid://df3eg83blyt7h"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
