@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cd7rd26karkng" path="res://Assets/Sprite-V1/WALL_PHONE.png" id="21_f35qm"]
 [ext_resource type="Texture2D" uid="uid://coqt548wm50x" path="res://Assets/Verdict/STAMP_ZONE.png" id="22_fghka"]
 [ext_resource type="Texture2D" uid="uid://r8ps2kb84x5c" path="res://Assets/Sprite-V1/CLOCK.png" id="22_s1ict"]
+[ext_resource type="Texture2D" uid="uid://bhaxngibpogke" path="res://Assets/Verdict/POLAROID_01.png" id="24_eiyl1"]
 [ext_resource type="Script" uid="uid://bsd1assdg3xj7" path="res://Scripts/Preview.gd" id="27_f35qm"]
 [ext_resource type="Texture2D" uid="uid://cbdd6dy7aolv1" path="res://Assets/DIALOGUE/PORTRAIT.png" id="27_othif"]
 [ext_resource type="Texture2D" uid="uid://lxh7ocuahmcc" path="res://Assets/DIALOGUE/DIALOGUE_TEXT.png" id="28_6aoy1"]
@@ -142,7 +143,13 @@ ink_condemn = ExtResource("21_f35qm")
 ink_innocent = ExtResource("22_s1ict")
 
 [node name="Layer_1" type="Sprite2D" parent="Interractible" unique_id=1274654958]
+modulate = Color(1, 1, 1, 0.5882353)
 texture = ExtResource("13_6aoy1")
+centered = false
+
+[node name="Last_pola" type="Sprite2D" parent="Interractible/Layer_1" unique_id=542058658]
+position = Vector2(156, 62)
+texture = ExtResource("24_eiyl1")
 centered = false
 
 [node name="Container_polaroid" type="Node2D" parent="Interractible" unique_id=1576945814]
@@ -204,7 +211,6 @@ shape = SubResource("RectangleShape2D_d0u6y")
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 size = Vector2i(790, 453)
-visible = true
 minimize_disabled = false
 maximize_disabled = false
 min_size = Vector2i(320, 180)

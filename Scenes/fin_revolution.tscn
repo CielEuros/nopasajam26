@@ -1,10 +1,67 @@
 [gd_scene format=3 uid="uid://cl6t3lwlicti0"]
 
-[ext_resource type="Texture2D" uid="uid://coqs0tmwt6pm8" path="res://icon.svg" id="1_704xo"]
+[ext_resource type="Texture2D" uid="uid://bt0eyuocimysc" path="res://Assets/FIN/MARGIN.png" id="1_s6ho4"]
+[ext_resource type="Texture2D" uid="uid://bhsccsvhj0ljf" path="res://Assets/FIN/WALL.png" id="2_wyybo"]
+[ext_resource type="Texture2D" uid="uid://ciba2kugsbewu" path="res://Assets/FIN/FOLDER.png" id="3_ntq1d"]
+[ext_resource type="Texture2D" uid="uid://dgxei4hvpd2fq" path="res://Assets/FIN/PAPER_TEXT_DESCRIPTION.png" id="4_j75ph"]
+[ext_resource type="Texture2D" uid="uid://b04fmmtma2y4c" path="res://Assets/FIN/TITLE.png" id="5_wsrhb"]
+[ext_resource type="FontFile" uid="uid://bn5og2btc30hw" path="res://Assets/Font/aseprite.otf" id="6_wyybo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ntq1d"]
+line_spacing = -3.0
+font_size = 6
+font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j75ph"]
+font = ExtResource("6_wyybo")
+font_size = 7
 
 [node name="FinRevolution" type="Node2D" unique_id=431295884]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1624110245]
-position = Vector2(615.5, 314)
-scale = Vector2(7.0546875, 3.890625)
-texture = ExtResource("1_704xo")
+[node name="Background" type="Sprite2D" parent="." unique_id=180505591]
+texture = ExtResource("1_s6ho4")
+centered = false
+
+[node name="Mur" type="Sprite2D" parent="Background" unique_id=99482125]
+position = Vector2(-67, 0)
+texture = ExtResource("2_wyybo")
+centered = false
+
+[node name="Dossier" type="Sprite2D" parent="Background" unique_id=1628099195]
+position = Vector2(149, 50)
+texture = ExtResource("3_ntq1d")
+centered = false
+
+[node name="Paper" type="Sprite2D" parent="Background" unique_id=53669699]
+position = Vector2(186, 90)
+texture = ExtResource("4_j75ph")
+centered = false
+
+[node name="Label" type="Label" parent="Background/Paper" unique_id=132946336]
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 90.0
+offset_bottom = 35.0
+text = "Camarade, félicitation !
+Tu as décidé de résisté et ne
+pas suivre les ordres, la
+Patrie ne t'en remercie pas."
+label_settings = SubResource("LabelSettings_ntq1d")
+horizontal_alignment = 1
+
+[node name="Paper_up" type="Sprite2D" parent="Background" unique_id=1346345837]
+position = Vector2(190, 79)
+texture = ExtResource("5_wsrhb")
+centered = false
+
+[node name="Label" type="Label" parent="Background/Paper_up" unique_id=2132180638]
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 64.0
+offset_bottom = 18.0
+text = "Revolution"
+label_settings = SubResource("LabelSettings_j75ph")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=756414078]
+anchor_mode = 0
+zoom = Vector2(3.6, 3.6)

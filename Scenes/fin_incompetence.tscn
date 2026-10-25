@@ -1,9 +1,69 @@
 [gd_scene format=3 uid="uid://26cje4vh3l87"]
 
-[ext_resource type="Texture2D" uid="uid://coqs0tmwt6pm8" path="res://icon.svg" id="1_850qa"]
+[ext_resource type="Texture2D" uid="uid://bhsccsvhj0ljf" path="res://Assets/FIN/WALL.png" id="1_4msrb"]
+[ext_resource type="Texture2D" uid="uid://ciba2kugsbewu" path="res://Assets/FIN/FOLDER.png" id="2_oi421"]
+[ext_resource type="Texture2D" uid="uid://dgxei4hvpd2fq" path="res://Assets/FIN/PAPER_TEXT_DESCRIPTION.png" id="3_7v24w"]
+[ext_resource type="Texture2D" uid="uid://b04fmmtma2y4c" path="res://Assets/FIN/TITLE.png" id="4_3kdyp"]
+[ext_resource type="Texture2D" uid="uid://bt0eyuocimysc" path="res://Assets/FIN/MARGIN.png" id="5_cuys1"]
+[ext_resource type="FontFile" uid="uid://bn5og2btc30hw" path="res://Assets/Font/aseprite.otf" id="6_oi421"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gt5qg"]
+line_spacing = -2.0
+font_size = 5
+font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hx5i"]
+font = ExtResource("6_oi421")
+font_size = 7
 
 [node name="FinIncompetence" type="Node2D" unique_id=655580452]
+texture_filter = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=606749427]
-position = Vector2(1018, 552)
-texture = ExtResource("1_850qa")
+[node name="Margins" type="Sprite2D" parent="." unique_id=1761351030]
+texture = ExtResource("5_cuys1")
+centered = false
+
+[node name="Mur" type="Sprite2D" parent="Margins" unique_id=62008376]
+position = Vector2(-67, 0)
+texture = ExtResource("1_4msrb")
+centered = false
+
+[node name="Dossier" type="Sprite2D" parent="Margins" unique_id=1719441169]
+position = Vector2(149, 50)
+texture = ExtResource("2_oi421")
+centered = false
+
+[node name="Paper" type="Sprite2D" parent="Margins" unique_id=1846943061]
+position = Vector2(186, 90)
+texture = ExtResource("3_7v24w")
+centered = false
+
+[node name="Label" type="Label" parent="Margins/Paper" unique_id=694538733]
+offset_left = -63.0
+offset_top = 7.0
+offset_right = 157.0
+offset_bottom = 39.0
+text = "Tu as été éxécuté pour  
+sabotage par incompétences, 
+ l'accusé était un  revolutionnaire. 
+Aidé la révolution par erreur 
+quel exploit."
+label_settings = SubResource("LabelSettings_gt5qg")
+horizontal_alignment = 1
+
+[node name="Paper_up" type="Sprite2D" parent="Margins" unique_id=1606500568]
+position = Vector2(190, 79)
+texture = ExtResource("4_3kdyp")
+centered = false
+
+[node name="Label" type="Label" parent="Margins/Paper_up" unique_id=1586192315]
+offset_left = 16.0
+offset_top = 9.0
+offset_right = 56.0
+offset_bottom = 18.0
+text = "Saboteur"
+label_settings = SubResource("LabelSettings_8hx5i")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1523760834]
+anchor_mode = 0
+zoom = Vector2(3.6, 3.6)
