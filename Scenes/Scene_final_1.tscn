@@ -42,6 +42,21 @@
 [ext_resource type="Texture2D" uid="uid://bpqos4mmssmvu" path="res://Assets/Sprite-V1/MARGIN.png" id="40_x6tok"]
 [ext_resource type="Script" uid="uid://djexn5hpwk8st" path="res://Scripts/Control_camera.gd" id="43_p52ge"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3gngh"]
+shader = ExtResource("6_p52ge")
+shader_parameter/hover_active = 0.0
+shader_parameter/glow_color = Color(1, 0.9, 0.5, 1)
+shader_parameter/glow_intensity = 0.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
+size = Vector2(13.5, 27.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
+size = Vector2(6, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnqv"]
+size = Vector2(6, 24)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p52ge"]
 shader = ExtResource("6_p52ge")
 shader_parameter/hover_active = 0.0
@@ -52,6 +67,18 @@ shader_parameter/glow_intensity = 0.8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(26.944427, 16.111115)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_47r82"]
+shader = ExtResource("6_p52ge")
+shader_parameter/hover_active = 0.0
+shader_parameter/glow_color = Color(1, 0.9, 0.5, 1)
+shader_parameter/glow_intensity = 0.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mytgx"]
+shader = ExtResource("6_p52ge")
+shader_parameter/hover_active = 0.0
+shader_parameter/glow_color = Color(1, 0.9, 0.5, 1)
+shader_parameter/glow_intensity = 0.8
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_okstq"]
 shader = ExtResource("6_p52ge")
@@ -94,9 +121,25 @@ position = Vector2(399, 57)
 texture = ExtResource("5_dgrde")
 
 [node name="Buffet" type="Sprite2D" parent="Background/Murs" unique_id=284367765]
+material = SubResource("ShaderMaterial_3gngh")
 position = Vector2(325, 29)
 texture = ExtResource("6_2usdi")
 centered = false
+
+[node name="Area2D" type="Area2D" parent="Background/Murs/Buffet" unique_id=849399177]
+script = ExtResource("17_okstq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Murs/Buffet/Area2D" unique_id=1419218758]
+position = Vector2(39.25, 50.75)
+shape = SubResource("RectangleShape2D_d0u6y")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/Murs/Buffet/Area2D" unique_id=16994575]
+position = Vector2(41, 21)
+shape = SubResource("RectangleShape2D_3gngh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/Murs/Buffet/Area2D" unique_id=675850045]
+position = Vector2(6, 17)
+shape = SubResource("RectangleShape2D_fcnqv")
 
 [node name="Books_top_buffet" type="Sprite2D" parent="Background/Murs" unique_id=1861737943]
 material = SubResource("ShaderMaterial_p52ge")
@@ -118,13 +161,27 @@ texture = ExtResource("8_qro6v")
 centered = false
 
 [node name="Frame_buffet" type="Sprite2D" parent="Background/Murs" unique_id=429848101]
+material = SubResource("ShaderMaterial_47r82")
 position = Vector2(341, 21)
 texture = ExtResource("9_kdl8b")
 
+[node name="Area2D" type="Area2D" parent="Background/Murs/Frame_buffet" unique_id=1058963933]
+script = ExtResource("17_okstq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Murs/Frame_buffet/Area2D" unique_id=1359228301]
+polygon = PackedVector2Array(-10, 6, -4, -8, 7, -8, 7, 0, 9, 6, 9, 8, -10, 8)
+
 [node name="Canap" type="Sprite2D" parent="Background/Murs" unique_id=1133524580]
+material = SubResource("ShaderMaterial_mytgx")
 position = Vector2(283, 58)
 texture = ExtResource("10_n74dm")
 centered = false
+
+[node name="Area2D" type="Area2D" parent="Background/Murs/Canap" unique_id=174298652]
+script = ExtResource("17_okstq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Murs/Canap/Area2D" unique_id=749923894]
+polygon = PackedVector2Array(75, 33, 75, 5, 69, 0, 19, 0, 10, 7, 9, 13, 3, 14, 0, 18, 1, 34, 75, 34)
 
 [node name="Coussin_Rouge" type="Sprite2D" parent="Background/Murs" unique_id=1063149432]
 position = Vector2(302, 65)

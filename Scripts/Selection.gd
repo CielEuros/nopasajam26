@@ -27,7 +27,7 @@ func _ready() -> void:
 	_area.mouse_exited.connect(_on_area_mouse_exited)
 	_area.input_event.connect(_on_area_input_event)
 
-# Appelée par Interactible
+# Appelee par Interactible
 func setup(data: Dictionary) -> void:
 	clue_id = data.get("id", "")
 	description = data.get("description", "")
