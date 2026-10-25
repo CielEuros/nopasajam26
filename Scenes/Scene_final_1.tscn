@@ -43,7 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://bpqos4mmssmvu" path="res://Assets/Sprite-V1/MARGIN.png" id="40_x6tok"]
 [ext_resource type="Script" uid="uid://djexn5hpwk8st" path="res://Scripts/Control_camera.gd" id="43_p52ge"]
 [ext_resource type="FontFile" uid="uid://bxowny6fht8s0" path="res://Assets/slkscr.ttf" id="43_unpqr"]
-[ext_resource type="Texture2D" uid="uid://cp3caf03kxoic" path="res://Assets/UI_V2/QUITTER.png" id="44_unpqr"]
+[ext_resource type="Texture2D" uid="uid://cnnu553ly1fpt" path="res://Assets/ICONE_V2/TERMINER_SANSTEXTE.png" id="44_mytgx"]
+[ext_resource type="Texture2D" uid="uid://bcvodampwtpqn" path="res://Assets/ICONE_V2/TERMINER_TEXTE.png" id="45_2nhca"]
 [ext_resource type="PackedScene" uid="uid://crhpqmecq7lw5" path="res://Scenes/TimerBar.tscn" id="45_3kliq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3gngh"]
@@ -104,6 +105,7 @@ size = Vector2(31, 63)
 
 [sub_resource type="LabelSettings" id="LabelSettings_mytgx"]
 font = ExtResource("43_unpqr")
+font_size = 14
 font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
 
 [node name="Main2" type="Node2D" unique_id=1645864229]
@@ -379,7 +381,7 @@ script = ExtResource("43_p52ge")
 custom_maximum_size = Vector2(-1, 80)
 offset_left = 40.0
 offset_top = 3.0
-offset_right = 676.0
+offset_right = 646.0
 offset_bottom = 83.0
 scale = Vector2(0.5, 0.5)
 theme_override_constants/margin_left = 5
@@ -390,6 +392,7 @@ theme_override_constants/margin_bottom = 5
 [node name="VBoxContainer" type="VBoxContainer" parent="InvestigateUI" unique_id=820259877]
 layout_mode = 2
 offset_transform_scale = Vector2(0.5, 0.5)
+alignment = 1
 
 [node name="Description" type="Label" parent="InvestigateUI/VBoxContainer" unique_id=79534050]
 unique_name_in_owner = true
@@ -397,49 +400,49 @@ custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 text = "This is a placeholder text, not very interesting"
 label_settings = SubResource("LabelSettings_mytgx")
-horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Instructions" type="RichTextLabel" parent="InvestigateUI/VBoxContainer" unique_id=83788285]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
-theme_override_font_sizes/bold_font_size = 12
-theme_override_font_sizes/bold_italics_font_size = 12
-theme_override_font_sizes/italics_font_size = 12
-theme_override_font_sizes/mono_font_size = 12
+theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/bold_font_size = 10
+theme_override_font_sizes/bold_italics_font_size = 10
+theme_override_font_sizes/italics_font_size = 10
+theme_override_font_sizes/mono_font_size = 10
 bbcode_enabled = true
 text = "[i]Il y a peut-être un indice ici, investiguer coûtera[/i] [b]1 point d'action[/b]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 shortcut_keys_enabled = false
-horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="InvestigateUI/VBoxContainer" unique_id=2013733263]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 
 [node name="SearchButton" type="Button" parent="InvestigateUI/VBoxContainer/HBoxContainer" unique_id=325630597]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Investiguer (1)"
 expand_icon = true
 
 [node name="CloseButton" type="Button" parent="InvestigateUI/VBoxContainer/HBoxContainer" unique_id=933697842]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 14
 text = "Fermer"
 expand_icon = true
 
 [node name="EndButton" type="TextureButton" parent="." unique_id=1340123936]
-offset_left = 328.0
-offset_top = 6.0
+offset_left = 320.0
+offset_top = 5.0
 offset_right = 358.0
-offset_bottom = 41.0
-texture_normal = ExtResource("44_unpqr")
+offset_bottom = 40.0
+texture_normal = ExtResource("45_2nhca")
+texture_hover = ExtResource("44_mytgx")
+stretch_mode = 3
 
 [node name="ResourceBar" parent="." unique_id=382369897 instance=ExtResource("45_3kliq")]
 offset_left = 40.0
