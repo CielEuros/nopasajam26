@@ -8,4 +8,5 @@ script = ExtResource("1_mncim")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1718408870]
 stream = ExtResource("1_fnn4p")
+playback_type = 1
 parameters/looping = true

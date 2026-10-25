@@ -8,18 +8,18 @@ var muted: bool = false
 var previous_volume := 1.0
 
 func play_menu() -> void:
-	player.stream = AudioStreamOggVorbis.load_from_file("res://Assets/Music Loop/Music_Menu.ogg")
+	player.stream = load("res://Assets/Music Loop/Music_Menu.ogg")
 	player.play(0.0)
 
 func play_choice() -> void:
 	var from = player.get_playback_position() + AudioServer.get_time_since_last_mix()
-	player.stream = AudioStreamOggVorbis.load_from_file("res://Assets/Music Loop/Music_Choice.ogg")
+	player.stream = load("res://Assets/Music Loop/Music_Choice.ogg")
 	print("Track playing: Music_Choice.ogg from pos ", from)
 	player.play(from)
 
 func play_ending() -> void:
 	var from = player.get_playback_position() + AudioServer.get_time_since_last_mix()
-	player.stream = AudioStreamOggVorbis.load_from_file("res://Assets/Music Loop/Music_Ending.ogg")
+	player.stream = load("res://Assets/Music Loop/Music_Ending.ogg")
 	player.play(from)
 
 func play_collecte(level: int) -> void:
@@ -34,7 +34,7 @@ func play_collecte(level: int) -> void:
 	else:
 		track = str("Music_Collecte_0", level)
 	print("Track playing: ", track, ".ogg from pos ", from)
-	player.stream = AudioStreamOggVorbis.load_from_file(str("res://Assets/Music Loop/", track, ".ogg"))
+	player.stream = load(str("res://Assets/Music Loop/", track, ".ogg"))
 	player.play(from)
 
 func stop() -> void:
