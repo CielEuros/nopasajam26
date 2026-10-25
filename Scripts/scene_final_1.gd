@@ -66,7 +66,7 @@ func _set_investigate_clue_found(id: String) -> void:
 	
 func _buffet_clicked(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-		_set_investigate_ui_container("Inspecter la structure", "Un buffet à l'air ancien et aux nombreux tiroirs", 5,
+		_set_investigate_ui_container("Inspecter la structure", "Un buffet à l'air ancien et aux nombreux tiroirs", 2,
 			_set_investigate_ui.bind("", "", "Le buffet n'a pas de tiroir secret. Peut-être devrais-je regarder les livres ?", 0))
 
 func _livres_clicked(viewport: Node, event: InputEvent, shape_idx: int) -> void:
