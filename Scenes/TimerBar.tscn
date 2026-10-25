@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://crhpqmecq7lw5"]
+
+[ext_resource type="Texture2D" uid="uid://fgqno2yvdtti" path="res://Assets/UI_V2/CHRONO_01.png" id="1_epriw"]
+[ext_resource type="Script" uid="uid://okuf7iobwfsh" path="res://Scripts/timer_bar.gd" id="1_gi83b"]
+[ext_resource type="FontFile" uid="uid://bn5og2btc30hw" path="res://Assets/Font/aseprite.otf" id="2_jgsy0"]
+[ext_resource type="Texture2D" uid="uid://dxq4b7k1clqms" path="res://Assets/UI_V2/MASTER_CHRONO.png" id="3_vyx2x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ri5o"]
+font = ExtResource("2_jgsy0")
+font_size = 13
+
+[node name="TimerBar" type="HBoxContainer" unique_id=382369897]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -699.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_gi83b")
+remaining = 10
+
+[node name="Remaining" type="Label" parent="." unique_id=1114257360]
+layout_mode = 2
+text = "Temps Restant"
+label_settings = SubResource("LabelSettings_0ri5o")
+
+[node name="RemainingChronos" type="TextureRect" parent="." unique_id=1727375196]
+custom_maximum_size = Vector2(180, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource("3_vyx2x")
+stretch_mode = 1
+
+[node name="SpentChronos" type="TextureRect" parent="." unique_id=1978192865]
+custom_maximum_size = Vector2(0, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource("1_epriw")
+stretch_mode = 1
+flip_h = true
