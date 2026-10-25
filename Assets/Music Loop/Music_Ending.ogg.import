@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdg1tlo4ynetr"
+path="res://.godot/imported/Music_Ending.ogg-eed8fb4462219cf34b3b4320809da396.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music Loop/Music_Ending.ogg"
+dest_files=["res://.godot/imported/Music_Ending.ogg-eed8fb4462219cf34b3b4320809da396.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
