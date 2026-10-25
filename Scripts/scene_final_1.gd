@@ -34,6 +34,15 @@ func _set_investigate_ui(hint_id: String, description: String, cost: int) -> voi
 		%Instructions.visible = false
 		%SearchButton.visible = false
 	%CloseButton.visible = true
+
+func _set_investigate_clue_found(id: String) -> void:
+	_clear_investigate_ui()
+	if !CodeDictionnary.DATABASE.has(id):
+		return
+	var hint: Dictionary = CodeDictionnary.DATABASE.get(id)
+	print("Found: ", hint)
+	%Description.text = str("Nouvel indice trouvé : ", hint["description"])
+	%CloseButton.visible = true
 	
 func _buffet_clicked(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
@@ -42,14 +51,15 @@ func _buffet_clicked(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func _tirroir_clicked(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
-		_set_investigate_ui("Livre_Noir", "Un livre à la couverture entièrement noire", 1)
+		_set_investigate_ui("Livre_Noir", "Le tiroir contient un livre à la couverture entièrement noire", 1)
 
 
 func _on_search_button_pressed() -> void:
 	if current_discoverable_hint != "":
 		CodeDictionnary.register_found_clue(current_discoverable_hint)
-		#TODO popup indiquant l'indice trouvé
-	_clear_investigate_ui()
+		_set_investigate_clue_found(current_discoverable_hint)
+	else:
+		_clear_investigate_ui()
 
 
 func _on_close_button_pressed() -> void:
