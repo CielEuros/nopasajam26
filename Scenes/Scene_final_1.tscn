@@ -104,7 +104,7 @@ size = Vector2(31, 63)
 font = ExtResource("43_unpqr")
 font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
 
-[node name="Main" type="Node2D" unique_id=1645864229]
+[node name="Main2" type="Node2D" unique_id=1645864229]
 script = ExtResource("1_47r82")
 
 [node name="Background" type="Node2D" parent="." unique_id=734170171]

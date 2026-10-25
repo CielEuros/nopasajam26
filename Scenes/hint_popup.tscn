@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://du54qe06267iy"]
+
+[ext_resource type="FontFile" uid="uid://bxowny6fht8s0" path="res://Assets/slkscr.ttf" id="1_qcwuv"]
+[ext_resource type="Script" path="res://Scripts/hint_popup.gd" id="1_ri1qm"]
+[ext_resource type="Texture2D" uid="uid://bmynj3dvavbcs" path="res://Assets/chrono-icon.png" id="2_q8l1g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yq7a"]
+font = ExtResource("1_qcwuv")
+font_color = Color(0, 0, 0, 1)
+
+[node name="HintPopup" type="Node2D" unique_id=1657307870]
+script = ExtResource("1_ri1qm")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1972023452]
+offset_right = 279.0
+offset_bottom = 163.0
+color = Color(0.22745098, 0.36078432, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1855507847]
+offset_right = 279.0
+offset_bottom = 163.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1071386854]
+layout_mode = 2
+alignment = 1
+
+[node name="Description" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1817570505]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+text = "This is a placeholder text, not very interesting"
+label_settings = SubResource("LabelSettings_0yq7a")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=533232832]
+layout_mode = 2
+
+[node name="Instructions" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=904700048]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[i]Il y a peut-être un indice ici, investiguer coûtera[/i] [b]1 point d'action[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+
+[node name="InvestiguerButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=836703719]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Investiguer (1)"
+icon = ExtResource("2_q8l1g")
+expand_icon = true
+
+[node name="FermerButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=729883312]
+layout_mode = 2
+text = "Fermer"
