@@ -8,8 +8,8 @@ extends Node
 	#},
 
 const DATABASE = {
-	"1884" : {
-		"description": "Livre revolutionnaire",
+	"1984" : {
+		"description": "1984, un livre revolutionnaire",
 		"is_sufficient_proof": true,
 		"scene_image": "res://Assets/INDICE_ICONE/1984_MINIA.png",
 		"preview_image": "res://Assets/INDICE_ICONE/1984.png"
