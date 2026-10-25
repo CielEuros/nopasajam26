@@ -13,9 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://rstqtl8q6rp7" path="res://Assets/Verdict/FOLDER.png" id="11_ll3bp"]
 [ext_resource type="Texture2D" uid="uid://pdy6e55ra31i" path="res://Assets/Verdict/FURNITURE.png" id="12_othif"]
 [ext_resource type="Texture2D" uid="uid://c06lkkxqea3mg" path="res://Assets/Verdict/Layer 1.png" id="13_6aoy1"]
-[ext_resource type="Texture2D" uid="uid://b6mcqwcdo6g2n" path="res://Assets/Verdict/PAPER_TEXT_DESCRIPTION.png" id="14_eiyl1"]
-[ext_resource type="Texture2D" uid="uid://qw21t02lhhrn" path="res://Assets/Verdict/POLAROID_ZOOM.png" id="15_84lcx"]
-[ext_resource type="Texture2D" uid="uid://c5vjds7tmuu1h" path="res://Assets/Verdict/CLIP.png" id="16_wimf1"]
 [ext_resource type="PackedScene" uid="uid://d3ud557skwv3a" path="res://Scenes/fin_compliance.tscn" id="18_1i3ka"]
 [ext_resource type="PackedScene" uid="uid://dgwqsb1h6cg8k" path="res://Scenes/polaroid.tscn" id="18_iutfu"]
 [ext_resource type="Script" uid="uid://dij3ysip1ptjj" path="res://Scripts/Interactible.gd" id="18_muixs"]
@@ -26,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b0dfk65dhb1km" path="res://Assets/Tampon_Temporaire.png" id="21_6aoy1"]
 [ext_resource type="Texture2D" uid="uid://coqt548wm50x" path="res://Assets/Verdict/STAMP_ZONE.png" id="22_fghka"]
 [ext_resource type="Texture2D" uid="uid://bhaxngibpogke" path="res://Assets/Verdict/POLAROID_01.png" id="24_eiyl1"]
-[ext_resource type="Script" uid="uid://bsd1assdg3xj7" path="res://Scripts/Preview.gd" id="27_f35qm"]
+[ext_resource type="PackedScene" uid="uid://cm2tbt0khghcw" path="res://Scenes/polaroid_preview.tscn" id="25_s1ict"]
 [ext_resource type="Texture2D" uid="uid://cbdd6dy7aolv1" path="res://Assets/DIALOGUE/PORTRAIT.png" id="27_othif"]
 [ext_resource type="Texture2D" uid="uid://lxh7ocuahmcc" path="res://Assets/DIALOGUE/DIALOGUE_TEXT.png" id="28_6aoy1"]
 [ext_resource type="FontFile" uid="uid://bn5og2btc30hw" path="res://Assets/Font/aseprite.otf" id="28_ll3bp"]
@@ -34,6 +31,15 @@
 [ext_resource type="Texture2D" uid="uid://cxaurnj82jkg" path="res://Assets/TITRE/NORMAL_BUTTON.png" id="29_ll3bp"]
 [ext_resource type="Texture2D" uid="uid://cui8l17enptl0" path="res://Assets/Verdict/STAMP.png" id="30_ll3bp"]
 [ext_resource type="Texture2D" uid="uid://ulikcfp5y0ig" path="res://Assets/UI_V2/HOVER_BUTTON.png" id="30_othif"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ll3bp"]
+font = ExtResource("28_ll3bp")
+font_size = 7
+font_color = Color(0.5647059, 0.48235294, 0.4392157, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6aoy1"]
+font = ExtResource("28_ll3bp")
+font_size = 7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
 size = Vector2(14, 15)
@@ -116,21 +122,30 @@ centered = false
 texture = ExtResource("12_othif")
 centered = false
 
-[node name="Paper_Text_Description" type="Sprite2D" parent="Background" unique_id=1360623655]
-position = Vector2(261, 62)
-texture = ExtResource("14_eiyl1")
-centered = false
+[node name="ProofInstructionLabel" type="Label" parent="Background" unique_id=1339393858]
+offset_left = 221.0
+offset_top = 59.0
+offset_right = 272.0
+offset_bottom = 106.0
+text = "Selectionner
+3 indices
+comme
+preuves
+"
+label_settings = SubResource("LabelSettings_ll3bp")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Polaroid_Zoom" type="Sprite2D" parent="Background" unique_id=1215518438]
-position = Vector2(211.94443, 51.94445)
-texture = ExtResource("15_84lcx")
-centered = false
-
-[node name="Clip" type="Sprite2D" parent="Background" unique_id=386603468]
-visibility_layer = 524288
-z_index = 70
-texture = ExtResource("16_wimf1")
-centered = false
+[node name="PolaroidEmptyLabel" type="Label" parent="Background" unique_id=1539631176]
+unique_name_in_owner = true
+offset_left = 162.0
+offset_top = 84.0
+offset_right = 202.0
+offset_bottom = 111.0
+text = "Aucun
+indice
+disponible"
+label_settings = SubResource("LabelSettings_6aoy1")
 
 [node name="Interractible" type="Node2D" parent="." unique_id=389798965]
 script = ExtResource("18_muixs")
@@ -142,6 +157,7 @@ ink_condemn = ExtResource("21_6aoy1")
 ink_innocent = ExtResource("21_6aoy1")
 
 [node name="Layer_1" type="Sprite2D" parent="Interractible" unique_id=1274654958]
+visible = false
 modulate = Color(1, 1, 1, 0.5882353)
 texture = ExtResource("13_6aoy1")
 centered = false
@@ -206,152 +222,17 @@ centered = false
 position = Vector2(255, 129)
 shape = SubResource("RectangleShape2D_d0u6y")
 
-[node name="DecisionPopUp" type="PopupPanel" parent="Interractible" unique_id=1185620517]
-canvas_item_default_texture_filter = 0
-oversampling_override = 1.0
-size = Vector2i(790, 453)
-visible = true
-minimize_disabled = false
-maximize_disabled = false
-min_size = Vector2i(320, 180)
-max_size = Vector2i(2000, 2000)
-content_scale_mode = 1
-content_scale_aspect = 1
-theme_override_styles/panel = SubResource("StyleBoxEmpty_othif")
-
-[node name="body" type="TextureRect" parent="Interractible/DecisionPopUp" unique_id=846287395]
-anchors_preset = -1
-offset_right = 790.0
-offset_bottom = 453.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("27_othif")
-
-[node name="TextureRect" type="TextureRect" parent="Interractible/DecisionPopUp/body" unique_id=29559416]
-layout_mode = 0
-offset_right = 785.0
-offset_bottom = 448.0
-texture = ExtResource("28_6aoy1")
-
-[node name="TextureRect" type="TextureRect" parent="Interractible/DecisionPopUp/body/TextureRect" unique_id=1148840105]
-layout_mode = 0
-offset_right = 783.0
-offset_bottom = 444.0
-texture = ExtResource("29_eiyl1")
-
-[node name="Label" type="Label" parent="Interractible/DecisionPopUp/body" unique_id=1620978313]
-layout_mode = 0
-offset_left = 257.0
-offset_top = 301.0
-offset_right = 312.0
-offset_bottom = 324.0
+[node name="Label" type="Label" parent="Interractible/Area_Stamp_zone" unique_id=10254333]
+offset_left = 239.0
+offset_top = 123.0
+offset_right = 272.0
+offset_bottom = 137.0
 text = "Verdict"
-
-[node name="Control" type="Control" parent="Interractible/DecisionPopUp" unique_id=1725274929]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 790.0
-offset_bottom = 453.0
-
-[node name="CondemnButton" type="TextureButton" parent="Interractible/DecisionPopUp/Control" unique_id=1320743183]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.254
-anchor_top = 0.708
-anchor_right = 0.74600005
-anchor_bottom = 0.88900006
-offset_left = -13.628006
-offset_top = 19.940002
-offset_right = -398.37207
-offset_bottom = -60.60501
-scale = Vector2(2.6, 2.6)
-offset_transform_position = Vector2(170, 300)
-texture_normal = ExtResource("29_ll3bp")
-texture_hover = ExtResource("30_othif")
-
-[node name="Label" type="Label" parent="Interractible/DecisionPopUp/Control/CondemnButton" unique_id=2052646842]
-texture_filter = 1
-layout_mode = 0
-offset_left = 7.680001
-offset_top = 4.7446113
-offset_right = 44.68
-offset_bottom = 20.12924
-text = "Coupable"
-label_settings = SubResource("LabelSettings_d0u6y")
-vertical_alignment = 1
-
-[node name="innocentButton" type="TextureButton" parent="Interractible/DecisionPopUp/Control" unique_id=712383850]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.74600005
-anchor_bottom = 0.87600005
-offset_left = 360.0
-offset_top = 355.0
-offset_right = -171.37207
-offset_bottom = -14.820007
-scale = Vector2(2.6, 2.6)
-texture_normal = ExtResource("29_ll3bp")
-texture_hover = ExtResource("30_othif")
-
-[node name="Label" type="Label" parent="Interractible/DecisionPopUp/Control/innocentButton" unique_id=221401902]
-texture_filter = 1
-texture_repeat = 1
-layout_mode = 0
-offset_left = 8.846154
-offset_top = 8.076923
-offset_right = 52.846153
-offset_bottom = 31.076923
-text = "Innocent"
-label_settings = SubResource("LabelSettings_3gngh")
-
-[node name="CancelButton" type="TextureButton" parent="Interractible/DecisionPopUp/Control" unique_id=1907432893]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.256
-anchor_top = 0.735
-anchor_right = 0.72800004
-anchor_bottom = 0.86700004
-offset_left = 299.80798
-offset_top = -27.075012
-offset_right = -69.29602
-offset_bottom = -85.81503
-scale = Vector2(2.5, 2.5)
-offset_transform_scale = Vector2(2.6, 2.6)
-texture_normal = ExtResource("29_ll3bp")
-texture_hover = ExtResource("30_othif")
-
-[node name="Label" type="Label" parent="Interractible/DecisionPopUp/Control/CancelButton" unique_id=385571152]
-layout_mode = 0
-offset_left = 12.780809
-offset_top = 8.847997
-offset_right = 52.780807
-offset_bottom = 18.095991
-text = "Annuler"
-label_settings = SubResource("LabelSettings_fcnqv")
-
-[node name="Preview" type="Node2D" parent="Interractible" unique_id=1389670991]
-script = ExtResource("27_f35qm")
-
-[node name="Background" type="Panel" parent="Interractible/Preview" unique_id=854388523]
-offset_left = 219.44446
-offset_top = 55.555557
-offset_right = 260.2778
-offset_bottom = 85.55556
-
-[node name="Zoom_polaroid" type="Sprite2D" parent="Interractible/Preview" unique_id=1677896003]
-position = Vector2(240, 70)
-
-[node name="Label" type="Label" parent="Interractible/Preview" unique_id=1497656018]
-modulate = Color(0, 0, 0, 1)
-offset_left = 264.1667
-offset_top = 63.333336
-offset_right = 307.5
-offset_bottom = 93.88889
-offset_transform_enabled = true
-offset_transform_scale = Vector2(0.2, 0.2)
+label_settings = SubResource("LabelSettings_ll3bp")
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 2
+
+[node name="Preview" parent="Interractible" unique_id=215282946 instance=ExtResource("25_s1ict")]
 
 [node name="Stamp" type="Sprite2D" parent="Interractible" unique_id=1966722371]
 visible = false
@@ -363,8 +244,131 @@ centered = false
 position = Vector2(238.889, 120.833)
 centered = false
 
+[node name="DecisionPopUp" type="PopupPanel" parent="." unique_id=1185620517]
+unique_name_in_owner = true
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+size = Vector2i(790, 453)
+minimize_disabled = false
+maximize_disabled = false
+min_size = Vector2i(320, 180)
+max_size = Vector2i(2000, 2000)
+content_scale_mode = 1
+content_scale_aspect = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_othif")
+
+[node name="body" type="TextureRect" parent="DecisionPopUp" unique_id=846287395]
+anchors_preset = -1
+offset_right = 790.0
+offset_bottom = 453.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_othif")
+
+[node name="TextureRect" type="TextureRect" parent="DecisionPopUp/body" unique_id=29559416]
+layout_mode = 0
+offset_right = 785.0
+offset_bottom = 448.0
+texture = ExtResource("28_6aoy1")
+
+[node name="TextureRect" type="TextureRect" parent="DecisionPopUp/body/TextureRect" unique_id=1148840105]
+layout_mode = 0
+offset_right = 783.0
+offset_bottom = 444.0
+texture = ExtResource("29_eiyl1")
+
+[node name="Label" type="Label" parent="DecisionPopUp/body" unique_id=1620978313]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 301.0
+offset_right = 312.0
+offset_bottom = 324.0
+text = "Verdict"
+
+[node name="Control" type="Control" parent="DecisionPopUp" unique_id=1725274929]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 790.0
+offset_bottom = 453.0
+
+[node name="CondemnButton" type="TextureButton" parent="DecisionPopUp/Control" unique_id=1320743183]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.254
+anchor_top = 0.708
+anchor_right = 0.74600005
+anchor_bottom = 0.88900006
+offset_left = 10.340012
+offset_top = 18.276031
+offset_right = -326.34003
+offset_bottom = -43.71701
+scale = Vector2(2.6, 2.6)
+offset_transform_position = Vector2(170, 300)
+texture_normal = ExtResource("29_ll3bp")
+texture_hover = ExtResource("30_othif")
+
+[node name="Label" type="Label" parent="DecisionPopUp/Control/CondemnButton" unique_id=2052646842]
+texture_filter = 1
+layout_mode = 0
+offset_left = 7.680001
+offset_top = 4.7446113
+offset_right = 44.68
+offset_bottom = 20.12924
+text = "Coupable"
+label_settings = SubResource("LabelSettings_d0u6y")
+vertical_alignment = 1
+
+[node name="innocentButton" type="TextureButton" parent="DecisionPopUp/Control" unique_id=712383850]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.74600005
+anchor_bottom = 0.87600005
+offset_left = 360.0
+offset_top = 341.0
+offset_right = -171.37207
+offset_bottom = -28.820007
+scale = Vector2(2.6, 2.6)
+texture_normal = ExtResource("29_ll3bp")
+texture_hover = ExtResource("30_othif")
+
+[node name="Label" type="Label" parent="DecisionPopUp/Control/innocentButton" unique_id=221401902]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 8.846154
+offset_top = 8.076923
+offset_right = 52.846153
+offset_bottom = 31.076923
+text = "Innocent"
+label_settings = SubResource("LabelSettings_3gngh")
+
+[node name="CancelButton" type="TextureButton" parent="DecisionPopUp/Control" unique_id=1907432893]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.256
+anchor_top = 0.735
+anchor_right = 0.72800004
+anchor_bottom = 0.86700004
+offset_left = 299.80798
+offset_top = -27.075012
+offset_right = -21.072083
+offset_bottom = -66.871
+scale = Vector2(2.5, 2.5)
+offset_transform_scale = Vector2(2.6, 2.6)
+texture_normal = ExtResource("29_ll3bp")
+texture_hover = ExtResource("30_othif")
+
+[node name="Label" type="Label" parent="DecisionPopUp/Control/CancelButton" unique_id=385571152]
+layout_mode = 0
+offset_left = 12.780809
+offset_top = 8.847997
+offset_right = 52.780807
+offset_bottom = 18.095991
+text = "Annuler"
+label_settings = SubResource("LabelSettings_fcnqv")
+
 [connection signal="mouse_entered" from="Interractible/Area_Stamp_zone" to="Interractible" method="_on_area_stamp_zone_mouse_entered"]
 [connection signal="mouse_exited" from="Interractible/Area_Stamp_zone" to="Interractible" method="_on_area_stamp_zone_mouse_exited"]
-[connection signal="pressed" from="Interractible/DecisionPopUp/Control/CondemnButton" to="Interractible" method="_on_condemn_button_pressed"]
-[connection signal="pressed" from="Interractible/DecisionPopUp/Control/innocentButton" to="Interractible" method="_on_innocent_button_pressed"]
-[connection signal="pressed" from="Interractible/DecisionPopUp/Control/CancelButton" to="Interractible" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="DecisionPopUp/Control/CondemnButton" to="Interractible" method="_on_condemn_button_pressed"]
+[connection signal="pressed" from="DecisionPopUp/Control/innocentButton" to="Interractible" method="_on_innocent_button_pressed"]
+[connection signal="pressed" from="DecisionPopUp/Control/CancelButton" to="Interractible" method="_on_cancel_button_pressed"]

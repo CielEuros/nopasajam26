@@ -17,10 +17,11 @@ extends Node2D
 @export var ink_innocent: Texture2D
 
 @onready var _objects_container: Node2D = $Container_polaroid
+@onready var _no_clue_label: Label = %PolaroidEmptyLabel
 @onready var _preview: Preview = $Preview
 @onready var _stamp: Sprite2D = $Stamp
 @onready var _ink: Sprite2D = $Ink
-@onready var _decision: PopupPanel = $DecisionPopUp
+@onready var _decision: PopupPanel = %DecisionPopUp
 @onready var _stamp_zone: Area2D = $Area_Stamp_zone
 
 var _selected: Array[Selection] = []
@@ -39,6 +40,7 @@ func _ready() -> void:
 
 func _spawn_polaroids() -> void:
 	var clues_data = CodeDictionnary.get_found_clues_data()
+	_no_clue_label.visible = clues_data.is_empty()
 	
 	# On boucle sur chaque preuve avec son index (i)
 	for i in range(clues_data.size()):

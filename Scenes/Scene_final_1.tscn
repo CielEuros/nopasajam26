@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://cnnu553ly1fpt" path="res://Assets/ICONE_V2/TERMINER_SANSTEXTE.png" id="44_mytgx"]
 [ext_resource type="Texture2D" uid="uid://bcvodampwtpqn" path="res://Assets/ICONE_V2/TERMINER_TEXTE.png" id="45_2nhca"]
 [ext_resource type="PackedScene" uid="uid://crhpqmecq7lw5" path="res://Scenes/TimerBar.tscn" id="45_3kliq"]
+[ext_resource type="PackedScene" uid="uid://cm2tbt0khghcw" path="res://Scenes/polaroid_preview.tscn" id="47_2nhca"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3gngh"]
 shader = ExtResource("6_p52ge")
@@ -452,6 +453,21 @@ offset_right = 321.0
 offset_bottom = 175.0
 scale = Vector2(0.5, 0.5)
 alignment = 0
+
+[node name="PreviewBgBlur" type="ColorRect" parent="." unique_id=590361692]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(40, 40)
+offset_left = -1.0
+offset_top = 49.0
+offset_right = 422.0
+offset_bottom = 145.0
+color = Color(1, 1, 1, 0.4627451)
+
+[node name="Preview" parent="PreviewBgBlur" unique_id=215282946 instance=ExtResource("47_2nhca")]
+unique_name_in_owner = true
+position = Vector2(-297, -125)
+scale = Vector2(2, 2)
 
 [connection signal="input_event" from="Background/Murs/Buffet/Area2D" to="." method="_buffet_clicked"]
 [connection signal="mouse_entered" from="Background/Murs/Books_top_buffet/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_enter"]

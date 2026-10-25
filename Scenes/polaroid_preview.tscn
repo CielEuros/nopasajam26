@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cm2tbt0khghcw"]
+
+[ext_resource type="Script" uid="uid://bsd1assdg3xj7" path="res://Scripts/Preview.gd" id="1_71fec"]
+[ext_resource type="Texture2D" uid="uid://b6mcqwcdo6g2n" path="res://Assets/Verdict/PAPER_TEXT_DESCRIPTION.png" id="2_taird"]
+[ext_resource type="Texture2D" uid="uid://qw21t02lhhrn" path="res://Assets/Verdict/POLAROID_ZOOM.png" id="3_1h6ou"]
+[ext_resource type="Texture2D" uid="uid://c5vjds7tmuu1h" path="res://Assets/Verdict/CLIP.png" id="4_apmgv"]
+[ext_resource type="FontFile" uid="uid://bn5og2btc30hw" path="res://Assets/Font/aseprite.otf" id="5_taird"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2nhca"]
+font = ExtResource("5_taird")
+font_size = 7
+font_color = Color(0, 0, 0, 1)
+
+[node name="Preview" type="Node2D" unique_id=215282946]
+script = ExtResource("1_71fec")
+
+[node name="Paper_Text_Description" type="Sprite2D" parent="." unique_id=940726759]
+position = Vector2(261, 62)
+texture = ExtResource("2_taird")
+centered = false
+
+[node name="Polaroid_Zoom" type="Sprite2D" parent="." unique_id=1969614820]
+position = Vector2(211.94443, 51.94445)
+texture = ExtResource("3_1h6ou")
+centered = false
+
+[node name="Clip" type="Sprite2D" parent="." unique_id=857658229]
+visibility_layer = 524288
+z_index = 70
+texture = ExtResource("4_apmgv")
+centered = false
+
+[node name="Background" type="Panel" parent="." unique_id=393892924]
+offset_left = 219.44446
+offset_top = 55.555557
+offset_right = 260.2778
+offset_bottom = 85.55556
+
+[node name="Zoom_polaroid" type="Sprite2D" parent="." unique_id=300993560]
+position = Vector2(240, 70)
+
+[node name="Label" type="Label" parent="." unique_id=573953899]
+modulate = Color(0, 0, 0, 1)
+offset_left = 265.0
+offset_top = 64.0
+offset_right = 353.0
+offset_bottom = 124.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+label_settings = SubResource("LabelSettings_2nhca")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3

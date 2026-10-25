@@ -19,6 +19,7 @@ func _clear_investigate_ui() -> void:
 	%SearchButton.visible = false
 	%CloseButton.visible = false
 	current_discoverable_hint = ""
+	%PreviewBgBlur.visible = false
 
 func _set_investigate_ui(hint_id: String, description: String, cost: int) -> void:
 	if !CodeDictionnary.DATABASE.has(hint_id):
@@ -43,7 +44,9 @@ func _set_investigate_clue_found(id: String) -> void:
 		return
 	var hint: Dictionary = CodeDictionnary.DATABASE.get(id)
 	print("Found: ", hint)
-	%Description.text = str("Nouvel indice trouvé : ", hint["description"])
+	%Description.text = "Nouvel indice trouvé : "
+	%PreviewBgBlur.visible = true
+	%Preview.show_preview_from_dict(hint)
 	%CloseButton.visible = true
 	
 func _buffet_clicked(viewport: Node, event: InputEvent, shape_idx: int) -> void:
@@ -70,6 +73,7 @@ func _on_search_button_pressed() -> void:
 
 func _on_close_button_pressed() -> void:
 	_clear_investigate_ui()
+	%PreviewBgBlur.visible = false
 
 
 func _on_end_button_pressed() -> void:
