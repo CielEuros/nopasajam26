@@ -7,7 +7,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_0ri5o"]
 font = ExtResource("2_jgsy0")
-font_size = 13
+font_size = 10
 
 [node name="TimerBar" type="HBoxContainer" unique_id=382369897]
 anchors_preset = 15

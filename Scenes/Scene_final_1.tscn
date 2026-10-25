@@ -436,19 +436,21 @@ text = "Fermer"
 expand_icon = true
 
 [node name="EndButton" type="TextureButton" parent="." unique_id=1340123936]
-offset_left = 320.0
-offset_top = 5.0
-offset_right = 358.0
-offset_bottom = 40.0
-texture_normal = ExtResource("45_2nhca")
-texture_hover = ExtResource("44_mytgx")
+offset_left = 178.0
+offset_top = 145.0
+offset_right = 216.0
+offset_bottom = 180.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("44_mytgx")
+texture_hover = ExtResource("45_2nhca")
 stretch_mode = 3
 
 [node name="ResourceBar" parent="." unique_id=382369897 instance=ExtResource("45_3kliq")]
-offset_left = 40.0
-offset_top = 153.0
-offset_right = 360.0
-offset_bottom = 174.0
+offset_left = 47.0
+offset_top = 154.0
+offset_right = 321.0
+offset_bottom = 175.0
+scale = Vector2(0.5, 0.5)
 alignment = 0
 
 [connection signal="input_event" from="Background/Murs/Buffet/Area2D" to="." method="_buffet_clicked"]
