@@ -1,5 +1,6 @@
 extends Node2D
 
+var JUGEMENT_SCENE : PackedScene = preload("res://Scenes/Jugement.tscn")
 var current_discoverable_hint: String = ""
 
 # Called when the node enters the scene tree for the first time.
@@ -64,3 +65,7 @@ func _on_search_button_pressed() -> void:
 
 func _on_close_button_pressed() -> void:
 	_clear_investigate_ui()
+
+
+func _on_end_button_pressed() -> void:
+	get_tree().change_scene_to_packed(JUGEMENT_SCENE)
