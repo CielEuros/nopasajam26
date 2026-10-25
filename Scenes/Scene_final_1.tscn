@@ -422,6 +422,12 @@ shortcut_keys_enabled = false
 layout_mode = 2
 size_flags_horizontal = 0
 
+[node name="NextButton" type="Button" parent="InvestigateUI/VBoxContainer/HBoxContainer" unique_id=2052561293]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Next"
+
 [node name="SearchButton" type="Button" parent="InvestigateUI/VBoxContainer/HBoxContainer" unique_id=325630597]
 unique_name_in_owner = true
 layout_mode = 2
@@ -470,8 +476,7 @@ position = Vector2(-297, -125)
 scale = Vector2(2, 2)
 
 [connection signal="input_event" from="Background/Murs/Buffet/Area2D" to="." method="_buffet_clicked"]
-[connection signal="mouse_entered" from="Background/Murs/Books_top_buffet/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_enter"]
-[connection signal="mouse_exited" from="Background/Murs/Books_top_buffet/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_exit"]
+[connection signal="input_event" from="Background/Murs/Books_top_buffet/Area2D" to="." method="_livres_clicked"]
 [connection signal="input_event" from="Background/Murs/Desk/Desk-tirroir/Area2D" to="." method="_tirroir_clicked"]
 [connection signal="pressed" from="InvestigateUI/VBoxContainer/HBoxContainer/SearchButton" to="." method="_on_search_button_pressed"]
 [connection signal="pressed" from="InvestigateUI/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
