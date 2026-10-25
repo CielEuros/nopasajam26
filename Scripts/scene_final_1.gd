@@ -59,6 +59,8 @@ func _on_search_button_pressed() -> void:
 	if current_discoverable_hint != "":
 		CodeDictionnary.register_found_clue(current_discoverable_hint)
 		_set_investigate_clue_found(current_discoverable_hint)
+		var rem = $TimerBar.remaining - 1
+		$TimerBar.update(rem)
 	else:
 		_clear_investigate_ui()
 
