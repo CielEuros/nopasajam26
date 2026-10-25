@@ -1,5 +1,6 @@
 extends Node2D
 
+var JUGEMENT_SCENE : PackedScene = preload("res://Scenes/Jugement.tscn")
 var current_discoverable_hint: String = ""
 
 # Called when the node enters the scene tree for the first time.
@@ -58,9 +59,15 @@ func _on_search_button_pressed() -> void:
 	if current_discoverable_hint != "":
 		CodeDictionnary.register_found_clue(current_discoverable_hint)
 		_set_investigate_clue_found(current_discoverable_hint)
+		var rem = $TimerBar.remaining - 1
+		$TimerBar.update(rem)
 	else:
 		_clear_investigate_ui()
 
 
 func _on_close_button_pressed() -> void:
 	_clear_investigate_ui()
+
+
+func _on_end_button_pressed() -> void:
+	get_tree().change_scene_to_packed(JUGEMENT_SCENE)

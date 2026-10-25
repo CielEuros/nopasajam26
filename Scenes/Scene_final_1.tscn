@@ -43,6 +43,8 @@
 [ext_resource type="Texture2D" uid="uid://bpqos4mmssmvu" path="res://Assets/Sprite-V1/MARGIN.png" id="40_x6tok"]
 [ext_resource type="Script" uid="uid://djexn5hpwk8st" path="res://Scripts/Control_camera.gd" id="43_p52ge"]
 [ext_resource type="FontFile" uid="uid://bxowny6fht8s0" path="res://Assets/slkscr.ttf" id="43_unpqr"]
+[ext_resource type="Texture2D" uid="uid://cp3caf03kxoic" path="res://Assets/UI_V2/QUITTER.png" id="44_unpqr"]
+[ext_resource type="PackedScene" uid="uid://crhpqmecq7lw5" path="res://Scenes/TimerBar.tscn" id="45_3kliq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3gngh"]
 shader = ExtResource("6_p52ge")
@@ -432,9 +434,24 @@ theme_override_font_sizes/font_size = 12
 text = "Fermer"
 expand_icon = true
 
+[node name="EndButton" type="TextureButton" parent="." unique_id=1340123936]
+offset_left = 328.0
+offset_top = 6.0
+offset_right = 358.0
+offset_bottom = 41.0
+texture_normal = ExtResource("44_unpqr")
+
+[node name="ResourceBar" parent="." unique_id=382369897 instance=ExtResource("45_3kliq")]
+offset_left = 40.0
+offset_top = 153.0
+offset_right = 360.0
+offset_bottom = 174.0
+alignment = 0
+
 [connection signal="input_event" from="Background/Murs/Buffet/Area2D" to="." method="_buffet_clicked"]
 [connection signal="mouse_entered" from="Background/Murs/Books_top_buffet/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_enter"]
 [connection signal="mouse_exited" from="Background/Murs/Books_top_buffet/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_exit"]
 [connection signal="input_event" from="Background/Murs/Desk/Desk-tirroir/Area2D" to="." method="_tirroir_clicked"]
 [connection signal="pressed" from="InvestigateUI/VBoxContainer/HBoxContainer/SearchButton" to="." method="_on_search_button_pressed"]
 [connection signal="pressed" from="InvestigateUI/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="EndButton" to="." method="_on_end_button_pressed"]
