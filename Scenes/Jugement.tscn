@@ -26,10 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://cd7rd26karkng" path="res://Assets/Sprite-V1/WALL_PHONE.png" id="21_f35qm"]
 [ext_resource type="Texture2D" uid="uid://coqt548wm50x" path="res://Assets/Verdict/STAMP_ZONE.png" id="22_fghka"]
 [ext_resource type="Texture2D" uid="uid://r8ps2kb84x5c" path="res://Assets/Sprite-V1/CLOCK.png" id="22_s1ict"]
-[ext_resource type="Script" uid="uid://cxmmdf7waigpu" path="res://Scripts/Decision.gd" id="23_f0apj"]
 [ext_resource type="Texture2D" uid="uid://ba6hy387706x" path="res://Assets/UI_V2/PAPER_TEXT_ATTENTION.png" id="27_1i3ka"]
 [ext_resource type="Script" uid="uid://bsd1assdg3xj7" path="res://Scripts/Preview.gd" id="27_f35qm"]
+[ext_resource type="Texture2D" uid="uid://cxaurnj82jkg" path="res://Assets/TITRE/NORMAL_BUTTON.png" id="29_ll3bp"]
 [ext_resource type="Texture2D" uid="uid://cui8l17enptl0" path="res://Assets/Verdict/STAMP.png" id="30_ll3bp"]
+[ext_resource type="Texture2D" uid="uid://ulikcfp5y0ig" path="res://Assets/UI_V2/HOVER_BUTTON.png" id="30_othif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
 size = Vector2(14, 15)
@@ -38,7 +39,10 @@ size = Vector2(14, 15)
 size = Vector2(30, 14)
 
 [node name="Main" type="Node2D" unique_id=1352504856]
-scale = Vector2(3.6, 3.6)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=265737252]
+anchor_mode = 0
+zoom = Vector2(3.6, 3.6)
 
 [node name="Background" type="Node2D" parent="." unique_id=817061849]
 z_index = -100
@@ -179,17 +183,17 @@ shape = SubResource("RectangleShape2D_d0u6y")
 
 [node name="DecisionPopUp" type="PopupPanel" parent="Interractible" unique_id=1185620517]
 oversampling_override = 1.0
-size = Vector2i(384, 160)
+size = Vector2i(100, 92)
+visible = true
 minimize_disabled = false
 maximize_disabled = false
 content_scale_factor = 0.8
-script = ExtResource("23_f0apj")
 
 [node name="TextureRect" type="TextureRect" parent="Interractible/DecisionPopUp" unique_id=846287395]
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 476.0
-offset_bottom = 196.0
+offset_right = 121.0
+offset_bottom = 111.0
 texture = ExtResource("27_1i3ka")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Interractible/DecisionPopUp" unique_id=1103155784]
@@ -198,8 +202,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 476.0
-offset_bottom = 196.0
+offset_right = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -215,23 +219,20 @@ text = "Verdict"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="CondemnButton" type="Button" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=1791324794]
-modulate = Color(1.102, 0, 0, 1)
+[node name="CondemnButton" type="TextureButton" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=1320743183]
 layout_mode = 2
-text = "Coupable"
-flat = true
+texture_normal = ExtResource("29_ll3bp")
+texture_hover = ExtResource("30_othif")
 
-[node name="InnocentButton" type="Button" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=826948867]
-modulate = Color(1.102, 0, 0, 1)
+[node name="innocentButton" type="TextureButton" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=712383850]
 layout_mode = 2
-text = "Innocent"
-flat = true
+texture_normal = ExtResource("29_ll3bp")
+texture_hover = ExtResource("30_othif")
 
-[node name="CancelButton" type="Button" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=2008638671]
-modulate = Color(1.102, 0, 0, 1)
+[node name="CancelButton" type="TextureButton" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=1907432893]
 layout_mode = 2
-text = "Cancel"
-flat = true
+texture_normal = ExtResource("29_ll3bp")
+texture_hover = ExtResource("30_othif")
 
 [node name="Preview" type="Node2D" parent="Interractible" unique_id=1389670991]
 script = ExtResource("27_f35qm")
@@ -265,3 +266,7 @@ centered = false
 [node name="Ink" type="Sprite2D" parent="Interractible" unique_id=681567733]
 position = Vector2(238.889, 120.833)
 centered = false
+
+[connection signal="pressed" from="Interractible/DecisionPopUp/VBoxContainer/CondemnButton" to="Interractible" method="_on_condemn_button_pressed"]
+[connection signal="pressed" from="Interractible/DecisionPopUp/VBoxContainer/innocentButton" to="Interractible" method="_on_innocent_button_pressed"]
+[connection signal="pressed" from="Interractible/DecisionPopUp/VBoxContainer/CancelButton" to="Interractible" method="_on_cancel_button_pressed"]

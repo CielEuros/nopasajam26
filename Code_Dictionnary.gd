@@ -35,7 +35,7 @@ const DATABASE = {
 }
 
 # La memoire de la partie : les IDs trouves dans l'ordre exact
-var _found_clues: Array[String] = []
+var _found_clues: Array[String] = ["Machine_Ecrire"]
 
 # Appelee par la Scene Enquete
 func register_found_clue(id: String) -> void:

@@ -1,7 +1,7 @@
 class_name Drop_Zone
 extends Area2D
 
-@export var placement_offset: Vector2 = Vector2 (14.0, 6.0)
+@export var placement_offset: Vector2 = Vector2 (4.0, 2.0)
 var contained_object: Selection
 
 func _ready() -> void:

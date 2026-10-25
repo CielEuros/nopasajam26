@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var polaroid_scene: PackedScene #scene a part pour la cree de façon adaptative à la database
-@export var spacing: Vector2 = Vector2(65, 65)
-@export var start_position: Vector2 = Vector2(576, 229)
+@export var spacing: Vector2 = Vector2(18, 18)
+@export var start_position: Vector2 = Vector2(160, 64)
 @export var polaroid_columns: int = 3
 
 @export_group("Scene Transitions")
@@ -20,7 +20,7 @@ extends Node2D
 @onready var _preview: Preview = $Preview
 @onready var _stamp: Sprite2D = $Stamp
 @onready var _ink: Sprite2D = $Ink
-@onready var _decision: Decision = $DecisionPopUp
+@onready var _decision: PopupPanel = $DecisionPopUp
 @onready var _stamp_zone: Area2D = $Area_Stamp_zone
 
 var _selected: Array[Selection] = []
@@ -30,7 +30,8 @@ func _ready() -> void:
 	_stamp.hide()
 	_ink.hide()
 
-	_decision.decision_made.connect(_on_decision_made)
+	#decision_made.connect(_on_decision_made)
+	_decision.exclusive = true
 	_stamp_zone.input_event.connect(_on_stamp_zone_clicked)
 
 	_spawn_polaroids()
@@ -70,22 +71,25 @@ func _on_object_unhovered() -> void:
 		_preview.hide_preview()
 
 func _on_stamp_zone_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if not _is_transitioning and is_instance_valid(_decision):
+	var is_pressed = event
+	if is_pressed is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if not _is_transitioning and is_pressed:
 			_decision.popup_centered()
 
 func _on_object_dropped(obj: Selection, zone: Area2D) -> void:
 	if obj not in _selected: _selected.append(obj)
 	if zone is Drop_Zone: zone.receive_object(obj)
 
-func _on_decision_made(choice: Decision.Choice) -> void:
-	if choice == Decision.Choice.CANCEL:
-		return
-		
-	if choice == Decision.Choice.CONDEMN:
-		_play_ending_sequence(true)
-	elif choice == Decision.Choice.INNOCENT:
-		_play_ending_sequence(false)
+func _on_condemn_button_pressed() -> void:
+	_decision.hide()
+	_play_ending_sequence(true)
+
+func _on_innocent_button_pressed() -> void:
+	_decision.hide()
+	_play_ending_sequence(false)
+
+func _on_cancel_button_pressed() -> void:
+	_decision.hide()
 
 func _play_ending_sequence(condemns: bool) -> void:
 	_is_transitioning = true
