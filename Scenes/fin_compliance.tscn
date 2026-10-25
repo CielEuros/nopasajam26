@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d3ud557skwv3a"]
+
+[ext_resource type="Texture2D" uid="uid://coqs0tmwt6pm8" path="res://icon.svg" id="1_rcksl"]
+
+[node name="FinCompliance" type="Node2D" unique_id=1243811061]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1518395759]
+position = Vector2(7, 263)
+scale = Vector2(4.7734375, 0.28125)
+texture = ExtResource("1_rcksl")
+centered = false

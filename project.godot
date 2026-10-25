@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="NoPasajam26"
-run/main_scene="uid://2grprs5mcnsr"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+CodeDictionnary="*uid://6qjnhsewj8ag"
 
 [display]
 

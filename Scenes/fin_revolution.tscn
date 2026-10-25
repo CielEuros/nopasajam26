@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cl6t3lwlicti0"]
+
+[ext_resource type="Texture2D" uid="uid://coqs0tmwt6pm8" path="res://icon.svg" id="1_704xo"]
+
+[node name="FinRevolution" type="Node2D" unique_id=431295884]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1624110245]
+position = Vector2(615.5, 314)
+scale = Vector2(7.0546875, 3.890625)
+texture = ExtResource("1_704xo")

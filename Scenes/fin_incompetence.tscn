@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://26cje4vh3l87"]
+
+[ext_resource type="Texture2D" uid="uid://coqs0tmwt6pm8" path="res://icon.svg" id="1_850qa"]
+
+[node name="FinIncompetence" type="Node2D" unique_id=655580452]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=606749427]
+position = Vector2(1018, 552)
+texture = ExtResource("1_850qa")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dgwqsb1h6cg8k"]
+
+[ext_resource type="Texture2D" uid="uid://bhaxngibpogke" path="res://Assets/Verdict/POLAROID_01.png" id="2_07fsh"]
+[ext_resource type="Script" uid="uid://dol5mgbsg37iv" path="res://Scripts/Selection.gd" id="2_ndk6p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gngh"]
+size = Vector2(16, 17)
+
+[node name="Polaroid" type="Sprite2D" unique_id=283345706]
+z_index = 30
+centered = false
+script = ExtResource("2_ndk6p")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1463039779]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1956480413]
+position = Vector2(4, 7)
+shape = SubResource("RectangleShape2D_3gngh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=392035113]
+z_index = -2
+position = Vector2(4, 7)
+texture = ExtResource("2_07fsh")

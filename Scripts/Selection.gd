@@ -1,20 +1,76 @@
-extends Node
+class_name Selection
+extends Sprite2D
 
+signal dropped(obj: Selection, zone: Area2D)
+signal hovered(obj: Selection)
+signal unhovered()
 
-# Sprite2D opacité réduite pour la preview et descritpion, faire 1 code affectant à chaque sprite son objet 
-# (directement sur le sprite ?), associé surement au code de l'effet d'hover donc faire une autre version
+var clue_id: String
+var description: String
+var is_sufficient_proof: bool
+var preview_texture: Texture2D
 
-# remettre mon code de house over sur les area 2D des sprites
+@onready var _area: Area2D = $Area2D
 
-# faire le système drag and drop tout en oubliant pas de ne pas l'activer si il n'a pas d'objet assigné, 
-# donné la possibilité si on drag un objet sur une zone déjà remplis de mettre l'objet à sa place original
+var interactable := false
+var original_position: Vector2
+var _is_dragging := false
+var _offset: Vector2
 
-# faire le code du stamp (message de prévention que si validé c'est validé ?)
+func _ready() -> void:
+	_area.collision_layer = 2
+	_area.collision_mask = 1
+	_area.input_pickable = false
+	_area.monitoring = false
 
-# faire code menu et modification du volume avec bouton recommencer le niveau
+	_area.mouse_entered.connect(_on_area_mouse_entered)
+	_area.mouse_exited.connect(_on_area_mouse_exited)
+	_area.input_event.connect(_on_area_input_event)
 
-# si le temps faire le code caméra adapté à zoomer sur les objets 
+# Appelée par Interactible
+func setup(data: Dictionary) -> void:
+	clue_id = data.get("id", "")
+	description = data.get("description", "")
+	is_sufficient_proof = data.get("is_sufficient_proof", false)
+	
+	# Chargement des images
+	var scene_img: String = data.get("scene_image", "")
+	if scene_img != "" and ResourceLoader.exists(scene_img):
+		texture = load(scene_img)
+		
+	var preview_img: String = data.get("preview_image", "")
+	if preview_img != "" and ResourceLoader.exists(preview_img):
+		preview_texture = load(preview_img)
+		
+	original_position = global_position # Sauvegarde après placement
+	interactable = true
+	visible = true
+	_area.input_pickable = true
+	_area.set_deferred("monitoring", true)
 
-# associer le code de scoring et de dépense d'endurance et l'UI à ma scène principale et la finaliser
+func _on_area_mouse_entered() -> void:
+	if interactable and not _is_dragging: hovered.emit(self)
 
-# menu UI notes où on peut mettre les polaroid déjà pris ?
+func _on_area_mouse_exited() -> void:
+	if interactable: unhovered.emit()
+
+func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if not interactable: return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			_is_dragging = true
+			_offset = get_global_mouse_position() - global_position
+			z_index = 100
+			unhovered.emit()
+		elif _is_dragging:
+			_is_dragging = false
+			z_index = 10
+			for area in _area.get_overlapping_areas():
+				if area is Drop_Zone:
+					dropped.emit(self, area)
+					return
+			global_position = original_position
+
+func _input(event: InputEvent) -> void:
+	if _is_dragging and event is InputEventMouseMotion:
+		global_position = get_global_mouse_position() - _offset

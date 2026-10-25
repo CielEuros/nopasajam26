@@ -59,13 +59,11 @@ horizontal_alignment = 1
 
 [node name="InvestiguerButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=836703719]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 text = "Investiguer (1)"
 icon = ExtResource("2_q8l1g")
 expand_icon = true
 
 [node name="FermerButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=729883312]
-visible = false
 layout_mode = 2
 text = "Fermer"

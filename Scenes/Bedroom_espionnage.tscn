@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2grprs5mcnsr"]
 
 [ext_resource type="Texture2D" uid="uid://byc6x53vcjdgi" path="res://Assets/Placeholder-Bedroom.png" id="1_7w26d"]
-[ext_resource type="Script" uid="uid://8kvwqvai7s2o" path="res://Scripts/Bedroom.gd" id="1_tn7r7"]
+[ext_resource type="Script" uid="uid://8kvwqvai7s2o" path="res://Scripts/Bedroom.gd" id="1_nu6pb"]
 [ext_resource type="PackedScene" uid="uid://dbnpbl624u54m" path="res://Scenes/hint_popup.tscn" id="3_m1xfa"]
 [ext_resource type="Script" uid="uid://bajhnhj5b5sb3" path="res://Scripts/Hint.gd" id="4_nu6pb"]
 [ext_resource type="PackedScene" uid="uid://bdco43s55oo84" path="res://Scenes/HintLoader.tscn" id="5_nu6pb"]
@@ -17,7 +17,6 @@ cost = 1
 metadata/_custom_type_script = "uid://bajhnhj5b5sb3"
 
 [node name="Main" type="Node2D" unique_id=409896861]
-script = ExtResource("1_tn7r7")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=650289631]
 position = Vector2(2, 0)
@@ -31,11 +30,12 @@ scale = Vector2(1.76, 1.76)
 texture = ExtResource("1_7w26d")
 region_enabled = true
 region_rect = Rect2(32.000122, 106.12072, 86.82938, 156.88)
+script = ExtResource("1_nu6pb")
 
 [node name="Area2D" type="Area2D" parent="Tiroirs" unique_id=891369438]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tiroirs/Area2D" unique_id=1775389474]
-position = Vector2(0.5681915, -1.4204559)
+position = Vector2(3.409092, -3.4090924)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="TiroirsHintPopup" parent="Tiroirs" unique_id=1657307870 instance=ExtResource("3_m1xfa")]
