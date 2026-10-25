@@ -21,7 +21,7 @@ const DATABASE = {
 		"preview_image": "res://Assets/INDICE_ICONE/BRIQUE_LAIT.png"
 	},
 	"Livre_Noir" : {
-		"description": "Crypto",
+		"description": "Un carnet de notes contenant de nombreux codes cryptographiques !",
 		"is_sufficient_proof": true,
 		"scene_image": "res://Assets/INDICE_ICONE/LIVRE_NOIR_MINIA.png",
 		"preview_image": "res://Assets/INDICE_ICONE/LIVRE_NOIR.png"
