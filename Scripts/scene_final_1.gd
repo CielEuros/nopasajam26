@@ -2,11 +2,12 @@ extends Node2D
 
 var JUGEMENT_SCENE : PackedScene = preload("res://Scenes/Jugement.tscn")
 var current_discoverable_hint: String = ""
+var collecte_level := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_clear_investigate_ui()
-
+	BackgroundMusicPlayer.play_collecte(-1)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -61,6 +62,8 @@ func _on_search_button_pressed() -> void:
 		_set_investigate_clue_found(current_discoverable_hint)
 		var rem = $ResourceBar.remaining - 1
 		$ResourceBar.update(rem)
+		collecte_level += 1
+		BackgroundMusicPlayer.play_collecte(collecte_level)
 	else:
 		_clear_investigate_ui()
 
@@ -70,4 +73,5 @@ func _on_close_button_pressed() -> void:
 
 
 func _on_end_button_pressed() -> void:
+	BackgroundMusicPlayer.stop()
 	get_tree().change_scene_to_packed(JUGEMENT_SCENE)
