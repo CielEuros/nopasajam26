@@ -11,8 +11,19 @@ func play_menu() -> void:
 	player.stream = AudioStreamOggVorbis.load_from_file("res://Assets/Music Loop/Music_Menu.ogg")
 	player.play(0.0)
 
+func play_choice() -> void:
+	var from = player.get_playback_position() + AudioServer.get_time_since_last_mix()
+	player.stream = AudioStreamOggVorbis.load_from_file("res://Assets/Music Loop/Music_Choice.ogg")
+	print("Track playing: Music_Choice.ogg from pos ", from)
+	player.play(from)
+
+func play_ending() -> void:
+	var from = player.get_playback_position() + AudioServer.get_time_since_last_mix()
+	player.stream = AudioStreamOggVorbis.load_from_file("res://Assets/Music Loop/Music_Ending.ogg")
+	player.play(from)
+
 func play_collecte(level: int) -> void:
-	var from = player.get_playback_position()
+	var from = player.get_playback_position() + AudioServer.get_time_since_last_mix()
 	var track
 	if (level >= 10):
 		track = "Music_Collecte_10"

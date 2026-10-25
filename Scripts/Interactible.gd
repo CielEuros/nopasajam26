@@ -34,6 +34,8 @@ func _ready() -> void:
 	_stamp_zone.input_event.connect(_on_stamp_zone_clicked)
 
 	_spawn_polaroids()
+	
+	BackgroundMusicPlayer.play_choice()
 
 func _spawn_polaroids() -> void:
 	var clues_data = CodeDictionnary.get_found_clues_data()
@@ -98,6 +100,8 @@ func _play_ending_sequence(condemns: bool) -> void:
 	_stamp.show()
 	_ink.hide()
 	await get_tree().create_timer(stamp_display_time).timeout
+	
+	BackgroundMusicPlayer.play_ending()
 
 	_stamp.hide()
 	if condemns:
