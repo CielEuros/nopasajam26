@@ -74,3 +74,11 @@ func _on_area_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -
 func _input(event: InputEvent) -> void:
 	if _is_dragging and event is InputEventMouseMotion:
 		global_position = get_global_mouse_position() - _offset
+
+
+func _on_area_2d_mouse_entered() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_CAN_DROP)
+
+
+func _on_area_2d_mouse_exited() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)

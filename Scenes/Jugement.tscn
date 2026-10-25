@@ -363,6 +363,8 @@ centered = false
 position = Vector2(238.889, 120.833)
 centered = false
 
+[connection signal="mouse_entered" from="Interractible/Area_Stamp_zone" to="Interractible" method="_on_area_stamp_zone_mouse_entered"]
+[connection signal="mouse_exited" from="Interractible/Area_Stamp_zone" to="Interractible" method="_on_area_stamp_zone_mouse_exited"]
 [connection signal="pressed" from="Interractible/DecisionPopUp/Control/CondemnButton" to="Interractible" method="_on_condemn_button_pressed"]
 [connection signal="pressed" from="Interractible/DecisionPopUp/Control/innocentButton" to="Interractible" method="_on_innocent_button_pressed"]
 [connection signal="pressed" from="Interractible/DecisionPopUp/Control/CancelButton" to="Interractible" method="_on_cancel_button_pressed"]

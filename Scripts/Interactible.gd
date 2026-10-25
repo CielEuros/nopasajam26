@@ -127,3 +127,11 @@ func _has_sufficient_proof() -> bool:
 		if obj.is_sufficient_proof: 
 			return true
 	return false
+
+
+func _on_area_stamp_zone_mouse_entered() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+
+
+func _on_area_stamp_zone_mouse_exited() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
