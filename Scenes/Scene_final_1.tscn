@@ -108,7 +108,7 @@ texture = ExtResource("2_b41dj")
 centered = false
 
 [node name="Murs_pattern" type="Sprite2D" parent="Background/Murs" unique_id=341024363]
-position = Vector2(-12, 3)
+position = Vector2(-12, 1)
 texture = ExtResource("3_pfnf2")
 centered = false
 
