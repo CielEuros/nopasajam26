@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://o5bnnno7283d"]
 
+[ext_resource type="Script" uid="uid://cekkm3p0sdm6f" path="res://Scripts/scene_final_1.gd" id="1_47r82"]
 [ext_resource type="Texture2D" uid="uid://crunrv74y8nq0" path="res://Assets/Sprite-V1/WALL.png" id="2_b41dj"]
 [ext_resource type="Texture2D" uid="uid://5ps7ojcmwb83" path="res://Assets/Sprite-V1/WALL_PATTERN.png" id="3_pfnf2"]
 [ext_resource type="Texture2D" uid="uid://bkpr7dqu6a01y" path="res://Assets/Sprite-V1/LEFT_DOOR.png" id="4_eeur1"]
@@ -41,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://dnsc1fayn5lfi" path="res://Assets/Sprite-V1/COFFEE_TABLE.png" id="38_rk3t4"]
 [ext_resource type="Texture2D" uid="uid://bpqos4mmssmvu" path="res://Assets/Sprite-V1/MARGIN.png" id="40_x6tok"]
 [ext_resource type="Script" uid="uid://djexn5hpwk8st" path="res://Scripts/Control_camera.gd" id="43_p52ge"]
+[ext_resource type="FontFile" uid="uid://bxowny6fht8s0" path="res://Assets/slkscr.ttf" id="43_unpqr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3gngh"]
 shader = ExtResource("6_p52ge")
@@ -98,7 +100,12 @@ shader_parameter/glow_intensity = 0.8
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
 size = Vector2(31, 63)
 
+[sub_resource type="LabelSettings" id="LabelSettings_mytgx"]
+font = ExtResource("43_unpqr")
+font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
+
 [node name="Main" type="Node2D" unique_id=1645864229]
+script = ExtResource("1_47r82")
 
 [node name="Background" type="Node2D" parent="." unique_id=734170171]
 
@@ -366,7 +373,68 @@ limit_right = 420
 limit_bottom = 180
 script = ExtResource("43_p52ge")
 
+[node name="InvestigateUI" type="MarginContainer" parent="." unique_id=2106823639]
+custom_maximum_size = Vector2(-1, 80)
+offset_left = 40.0
+offset_top = 3.0
+offset_right = 676.0
+offset_bottom = 83.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InvestigateUI" unique_id=820259877]
+layout_mode = 2
+offset_transform_scale = Vector2(0.5, 0.5)
+
+[node name="Description" type="Label" parent="InvestigateUI/VBoxContainer" unique_id=79534050]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "This is a placeholder text, not very interesting"
+label_settings = SubResource("LabelSettings_mytgx")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Instructions" type="RichTextLabel" parent="InvestigateUI/VBoxContainer" unique_id=83788285]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[i]Il y a peut-être un indice ici, investiguer coûtera[/i] [b]1 point d'action[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InvestigateUI/VBoxContainer" unique_id=2013733263]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SearchButton" type="Button" parent="InvestigateUI/VBoxContainer/HBoxContainer" unique_id=325630597]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Investiguer (1)"
+expand_icon = true
+
+[node name="CloseButton" type="Button" parent="InvestigateUI/VBoxContainer/HBoxContainer" unique_id=933697842]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Fermer"
+expand_icon = true
+
+[connection signal="input_event" from="Background/Murs/Buffet/Area2D" to="." method="_buffet_clicked"]
 [connection signal="mouse_entered" from="Background/Murs/Books_top_buffet/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_enter"]
 [connection signal="mouse_exited" from="Background/Murs/Books_top_buffet/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_exit"]
-[connection signal="mouse_entered" from="Background/Murs/Desk/Desk-tirroir/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_enter"]
-[connection signal="mouse_exited" from="Background/Murs/Desk/Desk-tirroir/Area2D" to="Background/Murs/Desk/Desk-tirroir" method="mouse_hover_exit"]
+[connection signal="input_event" from="Background/Murs/Desk/Desk-tirroir/Area2D" to="." method="_tirroir_clicked"]
+[connection signal="pressed" from="InvestigateUI/VBoxContainer/HBoxContainer/SearchButton" to="." method="_on_search_button_pressed"]
+[connection signal="pressed" from="InvestigateUI/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
