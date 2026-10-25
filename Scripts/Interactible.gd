@@ -24,7 +24,7 @@ extends Node2D
 @onready var _stamp_zone: Area2D = $Area_Stamp_zone
 
 var _selected: Array[Selection] = []
-var _is_transitioning := false
+var _is_transitioning : bool = false
 
 func _ready() -> void:
 	_stamp.hide()
@@ -41,7 +41,7 @@ func _spawn_polaroids() -> void:
 	# On boucle sur chaque preuve avec son index (i)
 	for i in range(clues_data.size()):
 		var data = clues_data[i]
-		var polaroid := polaroid_scene.instantiate() as Selection
+		var polaroid = polaroid_scene.instantiate() as Selection
 		_objects_container.add_child(polaroid)
 		
 		#Permet que tout les 3 colonnes on revienne à la ligne
@@ -49,8 +49,8 @@ func _spawn_polaroids() -> void:
 		var row : int = i / polaroid_columns
 		
 		# On calcule la position finale
-		var pos_x := start_position.x + (col * spacing.x)
-		var pos_y := start_position.y + (row * spacing.y)
+		var pos_x = start_position.x + (col * spacing.x)
+		var pos_y = start_position.y + (row * spacing.y)
 		
 		polaroid.global_position = Vector2(pos_x, pos_y)
 		polaroid.z_index = 10
