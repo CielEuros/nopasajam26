@@ -23,9 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://26cje4vh3l87" path="res://Scenes/fin_incompetence.tscn" id="20_f35qm"]
 [ext_resource type="Texture2D" uid="uid://cgs8sru14xuf5" path="res://Assets/Verdict/PROOF_01.png" id="20_n582x"]
 [ext_resource type="Script" uid="uid://dcye2vjl0cs4o" path="res://Scripts/Drop_Zone.gd" id="21_1iyno"]
-[ext_resource type="Texture2D" uid="uid://cd7rd26karkng" path="res://Assets/Sprite-V1/WALL_PHONE.png" id="21_f35qm"]
+[ext_resource type="Texture2D" uid="uid://b0dfk65dhb1km" path="res://Assets/Tampon_Temporaire.png" id="21_6aoy1"]
 [ext_resource type="Texture2D" uid="uid://coqt548wm50x" path="res://Assets/Verdict/STAMP_ZONE.png" id="22_fghka"]
-[ext_resource type="Texture2D" uid="uid://r8ps2kb84x5c" path="res://Assets/Sprite-V1/CLOCK.png" id="22_s1ict"]
 [ext_resource type="Texture2D" uid="uid://bhaxngibpogke" path="res://Assets/Verdict/POLAROID_01.png" id="24_eiyl1"]
 [ext_resource type="Script" uid="uid://bsd1assdg3xj7" path="res://Scripts/Preview.gd" id="27_f35qm"]
 [ext_resource type="Texture2D" uid="uid://cbdd6dy7aolv1" path="res://Assets/DIALOGUE/PORTRAIT.png" id="27_othif"]
@@ -139,8 +138,8 @@ polaroid_scene = ExtResource("18_iutfu")
 compliance_scene = ExtResource("18_1i3ka")
 revolution_scene = ExtResource("19_1iyno")
 incompetence_scene = ExtResource("20_f35qm")
-ink_condemn = ExtResource("21_f35qm")
-ink_innocent = ExtResource("22_s1ict")
+ink_condemn = ExtResource("21_6aoy1")
+ink_innocent = ExtResource("21_6aoy1")
 
 [node name="Layer_1" type="Sprite2D" parent="Interractible" unique_id=1274654958]
 modulate = Color(1, 1, 1, 0.5882353)
@@ -211,6 +210,7 @@ shape = SubResource("RectangleShape2D_d0u6y")
 canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
 size = Vector2i(790, 453)
+visible = true
 minimize_disabled = false
 maximize_disabled = false
 min_size = Vector2i(320, 180)
@@ -354,6 +354,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Stamp" type="Sprite2D" parent="Interractible" unique_id=1966722371]
+visible = false
 position = Vector2(238.8889, 120.83333)
 texture = ExtResource("30_ll3bp")
 centered = false
