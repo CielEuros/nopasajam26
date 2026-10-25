@@ -26,8 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://cd7rd26karkng" path="res://Assets/Sprite-V1/WALL_PHONE.png" id="21_f35qm"]
 [ext_resource type="Texture2D" uid="uid://coqt548wm50x" path="res://Assets/Verdict/STAMP_ZONE.png" id="22_fghka"]
 [ext_resource type="Texture2D" uid="uid://r8ps2kb84x5c" path="res://Assets/Sprite-V1/CLOCK.png" id="22_s1ict"]
-[ext_resource type="Texture2D" uid="uid://ba6hy387706x" path="res://Assets/UI_V2/PAPER_TEXT_ATTENTION.png" id="27_1i3ka"]
 [ext_resource type="Script" uid="uid://bsd1assdg3xj7" path="res://Scripts/Preview.gd" id="27_f35qm"]
+[ext_resource type="Texture2D" uid="uid://cbdd6dy7aolv1" path="res://Assets/DIALOGUE/PORTRAIT.png" id="27_othif"]
+[ext_resource type="Texture2D" uid="uid://lxh7ocuahmcc" path="res://Assets/DIALOGUE/DIALOGUE_TEXT.png" id="28_6aoy1"]
+[ext_resource type="FontFile" uid="uid://bn5og2btc30hw" path="res://Assets/Font/aseprite.otf" id="28_ll3bp"]
+[ext_resource type="Texture2D" uid="uid://h65htb1d6svn" path="res://Assets/DIALOGUE/NAME.png" id="29_eiyl1"]
 [ext_resource type="Texture2D" uid="uid://cxaurnj82jkg" path="res://Assets/TITRE/NORMAL_BUTTON.png" id="29_ll3bp"]
 [ext_resource type="Texture2D" uid="uid://cui8l17enptl0" path="res://Assets/Verdict/STAMP.png" id="30_ll3bp"]
 [ext_resource type="Texture2D" uid="uid://ulikcfp5y0ig" path="res://Assets/UI_V2/HOVER_BUTTON.png" id="30_othif"]
@@ -37,6 +40,23 @@ size = Vector2(14, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0u6y"]
 size = Vector2(30, 14)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_othif"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d0u6y"]
+font = ExtResource("28_ll3bp")
+font_size = 7
+font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3gngh"]
+font = ExtResource("28_ll3bp")
+font_size = 7
+font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fcnqv"]
+font = ExtResource("28_ll3bp")
+font_size = 7
+font_color = Color(0.89411765, 0.37254903, 0.28627452, 1)
 
 [node name="Main" type="Node2D" unique_id=1352504856]
 
@@ -93,7 +113,6 @@ texture = ExtResource("11_ll3bp")
 centered = false
 
 [node name="Furniture" type="Sprite2D" parent="Background" unique_id=1144316769]
-visible = false
 texture = ExtResource("12_othif")
 centered = false
 
@@ -182,57 +201,127 @@ position = Vector2(255, 129)
 shape = SubResource("RectangleShape2D_d0u6y")
 
 [node name="DecisionPopUp" type="PopupPanel" parent="Interractible" unique_id=1185620517]
+canvas_item_default_texture_filter = 0
 oversampling_override = 1.0
-size = Vector2i(100, 92)
+size = Vector2i(790, 453)
 visible = true
 minimize_disabled = false
 maximize_disabled = false
-content_scale_factor = 0.8
+min_size = Vector2i(320, 180)
+max_size = Vector2i(2000, 2000)
+content_scale_mode = 1
+content_scale_aspect = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_othif")
 
-[node name="TextureRect" type="TextureRect" parent="Interractible/DecisionPopUp" unique_id=846287395]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 121.0
-offset_bottom = 111.0
-texture = ExtResource("27_1i3ka")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Interractible/DecisionPopUp" unique_id=1103155784]
+[node name="body" type="TextureRect" parent="Interractible/DecisionPopUp" unique_id=846287395]
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = -4.0
+offset_right = 790.0
+offset_bottom = 453.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_stretch_ratio = 0.0
-offset_transform_enabled = true
-alignment = 1
+texture = ExtResource("27_othif")
 
-[node name="Label" type="Label" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=1309351668]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-offset_transform_enabled = true
+[node name="TextureRect" type="TextureRect" parent="Interractible/DecisionPopUp/body" unique_id=29559416]
+layout_mode = 0
+offset_right = 785.0
+offset_bottom = 448.0
+texture = ExtResource("28_6aoy1")
+
+[node name="TextureRect" type="TextureRect" parent="Interractible/DecisionPopUp/body/TextureRect" unique_id=1148840105]
+layout_mode = 0
+offset_right = 783.0
+offset_bottom = 444.0
+texture = ExtResource("29_eiyl1")
+
+[node name="Label" type="Label" parent="Interractible/DecisionPopUp/body" unique_id=1620978313]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 301.0
+offset_right = 312.0
+offset_bottom = 324.0
 text = "Verdict"
-horizontal_alignment = 1
-uppercase = true
 
-[node name="CondemnButton" type="TextureButton" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=1320743183]
-layout_mode = 2
+[node name="Control" type="Control" parent="Interractible/DecisionPopUp" unique_id=1725274929]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 790.0
+offset_bottom = 453.0
+
+[node name="CondemnButton" type="TextureButton" parent="Interractible/DecisionPopUp/Control" unique_id=1320743183]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.254
+anchor_top = 0.708
+anchor_right = 0.74600005
+anchor_bottom = 0.88900006
+offset_left = -13.628006
+offset_top = 19.940002
+offset_right = -398.37207
+offset_bottom = -60.60501
+scale = Vector2(2.6, 2.6)
+offset_transform_position = Vector2(170, 300)
 texture_normal = ExtResource("29_ll3bp")
 texture_hover = ExtResource("30_othif")
 
-[node name="innocentButton" type="TextureButton" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=712383850]
-layout_mode = 2
+[node name="Label" type="Label" parent="Interractible/DecisionPopUp/Control/CondemnButton" unique_id=2052646842]
+texture_filter = 1
+layout_mode = 0
+offset_left = 7.680001
+offset_top = 4.7446113
+offset_right = 44.68
+offset_bottom = 20.12924
+text = "Coupable"
+label_settings = SubResource("LabelSettings_d0u6y")
+vertical_alignment = 1
+
+[node name="innocentButton" type="TextureButton" parent="Interractible/DecisionPopUp/Control" unique_id=712383850]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.74600005
+anchor_bottom = 0.87600005
+offset_left = 360.0
+offset_top = 355.0
+offset_right = -171.37207
+offset_bottom = -14.820007
+scale = Vector2(2.6, 2.6)
 texture_normal = ExtResource("29_ll3bp")
 texture_hover = ExtResource("30_othif")
 
-[node name="CancelButton" type="TextureButton" parent="Interractible/DecisionPopUp/VBoxContainer" unique_id=1907432893]
-layout_mode = 2
+[node name="Label" type="Label" parent="Interractible/DecisionPopUp/Control/innocentButton" unique_id=221401902]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 8.846154
+offset_top = 8.076923
+offset_right = 52.846153
+offset_bottom = 31.076923
+text = "Innocent"
+label_settings = SubResource("LabelSettings_3gngh")
+
+[node name="CancelButton" type="TextureButton" parent="Interractible/DecisionPopUp/Control" unique_id=1907432893]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.256
+anchor_top = 0.735
+anchor_right = 0.72800004
+anchor_bottom = 0.86700004
+offset_left = 299.80798
+offset_top = -27.075012
+offset_right = -69.29602
+offset_bottom = -85.81503
+scale = Vector2(2.5, 2.5)
+offset_transform_scale = Vector2(2.6, 2.6)
 texture_normal = ExtResource("29_ll3bp")
 texture_hover = ExtResource("30_othif")
+
+[node name="Label" type="Label" parent="Interractible/DecisionPopUp/Control/CancelButton" unique_id=385571152]
+layout_mode = 0
+offset_left = 12.780809
+offset_top = 8.847997
+offset_right = 52.780807
+offset_bottom = 18.095991
+text = "Annuler"
+label_settings = SubResource("LabelSettings_fcnqv")
 
 [node name="Preview" type="Node2D" parent="Interractible" unique_id=1389670991]
 script = ExtResource("27_f35qm")
@@ -267,6 +356,6 @@ centered = false
 position = Vector2(238.889, 120.833)
 centered = false
 
-[connection signal="pressed" from="Interractible/DecisionPopUp/VBoxContainer/CondemnButton" to="Interractible" method="_on_condemn_button_pressed"]
-[connection signal="pressed" from="Interractible/DecisionPopUp/VBoxContainer/innocentButton" to="Interractible" method="_on_innocent_button_pressed"]
-[connection signal="pressed" from="Interractible/DecisionPopUp/VBoxContainer/CancelButton" to="Interractible" method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="Interractible/DecisionPopUp/Control/CondemnButton" to="Interractible" method="_on_condemn_button_pressed"]
+[connection signal="pressed" from="Interractible/DecisionPopUp/Control/innocentButton" to="Interractible" method="_on_innocent_button_pressed"]
+[connection signal="pressed" from="Interractible/DecisionPopUp/Control/CancelButton" to="Interractible" method="_on_cancel_button_pressed"]

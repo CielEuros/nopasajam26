@@ -30,7 +30,6 @@ func _ready() -> void:
 	_stamp.hide()
 	_ink.hide()
 
-	#decision_made.connect(_on_decision_made)
 	_decision.exclusive = true
 	_stamp_zone.input_event.connect(_on_stamp_zone_clicked)
 
