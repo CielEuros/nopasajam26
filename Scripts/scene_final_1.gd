@@ -26,7 +26,7 @@ func _set_investigate_ui(hint_id: String, description: String, cost: int) -> voi
 	current_discoverable_hint = hint_id
 	%Description.text = description
 	if cost > 0:
-		%Instructions.text = str("Cout: ", cost, " points")
+		%Instructions.text = str("[i]Il y a peut-être un indice ici, investiguer coûtera[/i] [b]", cost, " point", "s" if cost > 1 else "", " d'action[/b]")
 		%Instructions.visible = true
 		%SearchButton.text = str("Chercher (", cost, ")")
 		%SearchButton.visible = true
